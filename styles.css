@@ -13,6 +13,7 @@ body {
 header {
     background-color: #eaf2f8;
     color: #fff;
+    height:75px;
 }
 
 .navbar {
@@ -23,10 +24,16 @@ header {
 }
 
 .hamburger-menu {
-    display: none; /* Hide initially on larger screens */
-    flex: 1;
+    display: block; /* Hide initially on larger screens */
+    margin-right: 20px;
+    margin-bottom: auto;
+    margin-top: 10px;
+    background-color: #17202a;
 }
 
+.hamburger-menu:hover{
+    background-color: #eaf2f8;
+}
 .bar {
     width: 25px;
     height: 3px;
@@ -37,13 +44,13 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-	margin-right: 60px;
+	margin-right: 20px;
 }
 
 .search-bar {
     flex: 1;
     padding: 10px;
-	margin-right: 120px;
+	margin-right: 20px;
 }
 
 .search-bar input {
@@ -55,23 +62,248 @@ header {
 
 .nav-buttons {
     flex: 3;
-    display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 button {
-    background-color: #333;
+    background-color: #5c5a5a;
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 10px 30px 10px;
     cursor: pointer;
+    width: 170px;
+    background-size: 75px 60px; 
+}
+
+button:hover {
+    background-color: #333; /* Change color on hover */
+}
+
+button:active {
+    background-color: #f48f0a; /* Change color on active (click) */
+}
+
+/* Apply a different style to the active button (Housing) */
+
+button.active{
+    background-color: #f48f0a;
+}
+.user-icon {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.secondary-nav {
+    background-color: #333; /* Set the background color of the secondary navigation */
+    color: #fff; /* Set the text color */
+    text-align: center; /* Center-align the text in the navigation bar */
+    padding: 10px 0; /* Add padding for better aesthetics */
+    border: 1px solid #ddd; /* Add a light border */
+}
+
+.secondary-nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Set the text color for links */
+    padding: 10px 20px; /* Add padding to each link */
+    margin: 0 10px; /* Add margin between links for spacing */
+    border-radius: 5px; /* Add rounded corners to links */
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: stretch; 
+    flex: 1; 
+}
+
+.left-sidebar, .right-sidebar, .center-content {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd; 
+}
+
+.left-sidebar {
+    /* Styles for the left sidebar */
+}
+
+.center-content {
+    /* Existing styles for center-content */
+   
+}
+
+.right-sidebar {
+    /* Styles for the right sidebar */
+}
+.wide-image-container {
+    padding: 50px;
+    text-align:center;
+    object-fit: cover;
+
+}
+
+.wide-image img {
+    max-width: 100%;
+    height: 100%;
+    
+}
+.remaining-text {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd; /* Add a border */
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: small;
+}
+
+.left-sidebar {
+    /* Styles for the left sidebar (25% width) */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    
+}
+
+.left-nav {
+    /* Styles for the left navigation */
+}
+
+.left-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-nav li {
+    margin-bottom: 17px;
+}
+
+.left-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+.side-section {
+    /* Styles for the side section (25% width) */
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.link-box,
+.social-box {
+    /* Styles for the 75% and 25% height boxes */
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    align-items: flex-end;
+    max-height: 500px; /* Set a maximum height */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds the maximum height */
+}
+
+
+.links,
+.social-links {
+    margin-bottom: 123px;
+    list-style: none;
+    padding: 0;
+}
+
+.links li,
+.social-links li {
+    margin-bottom: 3px;
+}
+
+.links a,
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Push the social links box to the bottom */
+.social-box {
+    margin-top: auto;
+    align-items: flex-end;
+    max-height: 145px; /* Set a maximum height */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds the maximum height */
+}
+.flowchart {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.node {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.center-contentt {
+    display: flex;
+    flex-direction: column; /* Set the direction to column */
+    align-items: center; /* Center-align items horizontally */
+}
+
+.cardd {
+    width: 100%; /* Make each card take the full width of the container */
+    max-width: 600px; /* Add a maximum width for better readability */
+    margin-bottom: 20px; /* Add some space between cards */
+    width: 100%; /* Make each card take the full width of the container */
+    max-width: 600px; /* Add a maximum width for better readability */
+    border: 1px solid #ddd; /* Add a border around each card */
+    border-radius: 10px; /* Add border radius for a rounded appearance */
+    padding: 20px; /* Add padding inside the card */
+    box-sizing: border-box; /* Include padding and border in the card's total width */
+
+}
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
 }
 
 /* Style the hero section */
 .hero {
     /* Add your styling for the hero section here */
 }
+
 
 /* Style the card section */
 .card-section {
@@ -114,16 +346,7 @@ footer {
     margin: 5px 0;
 }
 
-.wide-image-container {
-    background-color:  #fdfefe;
-    padding: 20px;
-    text-align: center;
-}
 
-.wide-image img {
-    max-width: 100%;
-    height: auto;
-}
 
 .random-text {
     margin-top: 10px;
@@ -156,6 +379,5 @@ footer {
     padding: 20px;
     text-align: center;
 }
-
 
 
