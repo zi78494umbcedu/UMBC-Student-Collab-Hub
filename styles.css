@@ -72,19 +72,21 @@ button {
     border-radius: 20px;
     padding: 10px 30px 10px;
     cursor: pointer;
-    width: 170px;
+    width: 196.36px;
     background-size: 75px 60px; 
+    order: 1;
+    margin-right: 10px;
 }
 
 register-button {
     background-color: #5c5a5a;
     color: #fff;
     border: none;
-    border-radius: 20px;
-    padding: 10px 30px 10px;
+    border-radius: 10px;
+    padding: 10px 10px 10px;
     cursor: pointer;
-    width: 170px;
-    background-size: 75px 60px; 
+    width: 10px;
+    order: 2;
 }
 
 button:hover {
@@ -123,7 +125,7 @@ button.active{
 
 .main-content {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 12% 76% 12%;
     align-items: stretch; 
     flex: 1; 
 }
@@ -288,12 +290,7 @@ body {
 }
 
 .cardd {
-    margin-top: 10px;
     width: 100%; /* Make each card take the full width of the container */
-    max-width: 600px; /* Add a maximum width for better readability */
-    margin-bottom: 20px; /* Add some space between cards */
-    width: 100%; /* Make each card take the full width of the container */
-    max-width: 600px; /* Add a maximum width for better readability */
     border: 1px solid #ddd; /* Add a border around each card */
     padding: 10px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
@@ -311,7 +308,109 @@ ul {
 li {
     margin-bottom: 5px;
 }
+.main-content-exp {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: stretch; 
+    flex: 1; 
+}
+.left-sidebar-exp {
+    /* Styles for the left sidebar (75% width) */
+    padding: 20px;
+    border: 1px solid #ddd; /* Add a border around each card */
+    box-sizing: border-box; /* Include padding and border in the card's total width */
+    overflow-y:auto /* Enable vertical scrolling for the left sidebar */ 
+}
+/* Add a heading for the left sidebar */
+.left-sidebar-exp h2 {
+    margin-top: 25px;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
 
+.right-sidebar-exp {
+    /* Styles for the left sidebar (25% width) */
+    border: 1px solid #ddd; /* Add a border around each card */
+    padding: 20px; /* Add padding inside the card */
+    box-sizing: border-box; /* Include padding and border in the card's total width */
+}
+/* Add space between each testimonial */
+.testimonial {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Additional styling for better aesthetics */
+.testimonial-section {
+    max-height: 500px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling for the testimonials */
+}
+/* Add space after each "Read More" button */
+.testimonial button {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+/* Style for the "Read More" button */
+.testimonial button {
+    font-size: 14px; /* Adjust the font size */
+    padding: 1px 2.5px; /* Adjust the padding for top/bottom and left/right */
+    background-color: #5c5a5a; /* Background color */
+    color: #fff; /* Text color */
+    border: 1px solid #5c5a5a; /* Border color */
+    border-radius: 3px; /* Border radius for rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect for the button */
+.testimonial button:hover {
+    background-color: #444; /* Change background color on hover */
+}
+
+.form-section {
+    margin-top: 20px;
+    text-align: left; /* Align the form elements to the left */
+}
+
+.form-section p {
+    margin-bottom: 10px;
+}
+
+/* Style for form labels */
+.form-section label {
+    display: inline-block;
+    width: 80px; /* Adjust the width of labels as needed */
+    margin-bottom: 5px; /* Add some space between labels and input boxes */
+}
+.form-section input,
+.form-section select,
+.form-section textarea {
+    width: 100%; /* Make the input boxes take the full width of their container */
+    padding: 8px; /* Add padding for better visual appearance */
+    margin-bottom: 10px; /* Add space between input boxes */
+    box-sizing: border-box; /* Include padding and border in the input box's total width */
+}
+
+/* Style for the story textarea to make it wider in height */
+.form-section textarea {
+    height: 150px; /* Adjust the height as needed */
+}
+
+
+/* Style for the submit button */
+.form-section button {
+    background-color: #5c5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.story{
+}
 /* Style the hero section */
 .hero {
     /* Add your styling for the hero section here */

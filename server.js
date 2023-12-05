@@ -3,6 +3,24 @@
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors'); // Add this line
+const path = require('path');
+
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root1234',
+    database: 'student_testimonials'
+});
+
+connection.connect();
+
+app.get('/testimonials', (req, res) => {
+    connection.query('SELECT * FROM testimonials', (error, results, fields) => {
+        if (error) throw error;
+        res.json(results);
+    });
+});
 
 const app = express();
 app.use(cors());
