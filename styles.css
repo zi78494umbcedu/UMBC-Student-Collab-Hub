@@ -76,6 +76,17 @@ button {
     background-size: 75px 60px; 
 }
 
+register-button {
+    background-color: #5c5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px 10px;
+    cursor: pointer;
+    width: 170px;
+    background-size: 75px 60px; 
+}
+
 button:hover {
     background-color: #333; /* Change color on hover */
 }
@@ -90,7 +101,8 @@ button.active{
     background-color: #f48f0a;
 }
 .user-icon {
-    margin-left: 10px; /* Adjust the margin as needed */
+    margin-left: 60px; /* Adjust the margin as needed */
+    border:1px #f48f0a;
 }
 
 .secondary-nav {
@@ -161,6 +173,7 @@ button.active{
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ddd;
+    
     
 }
 
@@ -270,19 +283,19 @@ body {
 }
 .center-contentt {
     display: flex;
-    flex-direction: column; /* Set the direction to column */
-    align-items: center; /* Center-align items horizontally */
+    flex-direction:column; /* Set the direction to column */
+    align-items:center; /* Center-align items horizontally */
 }
 
 .cardd {
+    margin-top: 10px;
     width: 100%; /* Make each card take the full width of the container */
     max-width: 600px; /* Add a maximum width for better readability */
     margin-bottom: 20px; /* Add some space between cards */
     width: 100%; /* Make each card take the full width of the container */
     max-width: 600px; /* Add a maximum width for better readability */
     border: 1px solid #ddd; /* Add a border around each card */
-    border-radius: 10px; /* Add border radius for a rounded appearance */
-    padding: 20px; /* Add padding inside the card */
+    padding: 10px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
 
 }
