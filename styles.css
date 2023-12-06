@@ -144,7 +144,7 @@ button.active{
 
 .main-content {
     display: grid;
-    grid-template-columns: 12% 76% 12%;
+    grid-template-columns: 15% 70% 15%;
     align-items: stretch; 
     flex: 1; 
 }
@@ -306,6 +306,9 @@ body {
     display: flex;
     flex-direction:column; /* Set the direction to column */
     align-items:center; /* Center-align items horizontally */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
 }
 
 .cardd {
@@ -335,14 +338,18 @@ li {
     align-items: stretch; 
     flex: 1; 
     background-color: #f5f5f5;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
 
 }
 .left-sidebar-exp {
     /* Styles for the left sidebar (75% width) */
     padding: 20px;
-    border: 1px solid #ddd; /* Add a border around each card */
+    border: 2px solid #ddd; /* Add a border around each card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
-    overflow-y:auto /* Enable vertical scrolling for the left sidebar */ 
+    overflow-y:auto; /* Enable vertical scrolling for the left sidebar */ 
+    background-color: #f5f5f5;
 }
 /* Add a heading for the left sidebar */
 .left-sidebar-exp h2 {
@@ -353,9 +360,10 @@ li {
 
 .right-sidebar-exp {
     /* Styles for the left sidebar (25% width) */
-    border: 1px solid #ddd; /* Add a border around each card */
+    border: 2px solid #ddd; /* Add a border around each card */
     padding: 20px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
+    background-color: #f5f5f5;
 }
 /* Add space between each testimonial */
 .testimonial {
