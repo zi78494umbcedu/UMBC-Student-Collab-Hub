@@ -89,13 +89,32 @@ register-button {
     order: 2;
 }
 
-button:hover {
-    background-color: #333; /* Change color on hover */
+
+
+
+/* Style for the "Register" button */
+.register-button a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-button:active {
-    background-color: #f48f0a; /* Change color on active (click) */
+.register-button a.active,
+.register-button a:hover {
+    background-color: #f48f0a; /* Orange color for hover and active state */
 }
+/* Add a style for the "Register" button when on the registration page */
+.registration-page .register-button a {
+    background-color: #f48f0a; /* Orange color for the active state */
+}
+
+button:hover {
+    background-color: #f48f0a; /* Change color on hover */
+}
+
+
 
 /* Apply a different style to the active button (Housing) */
 
@@ -294,7 +313,9 @@ body {
     border: 1px solid #ddd; /* Add a border around each card */
     padding: 10px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
-
+    
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
 }
 h2 {
     color: #333;
@@ -313,6 +334,8 @@ li {
     grid-template-columns: 60% 40%;
     align-items: stretch; 
     flex: 1; 
+    background-color: #f5f5f5;
+
 }
 .left-sidebar-exp {
     /* Styles for the left sidebar (75% width) */

@@ -1,69 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration | EKTA</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="register.js" defer></script>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="navbar">
-                <div class="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="logo">
-					<a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
-				</div>
-                <div class="search-bar">
-                    <input type="text" placeholder="We got you, Ask Us!">
-                </div>
-                <div class="nav">
-					<button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
-					<button><a href="Academic.html" style="text-decoration: none; color:white">Academic Aid</a></button>
-					<button><a href="Cultural.html" style="text-decoration: none; color:white">Cultural Connection</a></button>
-					<button><a href="Network.html" style="text-decoration: none; color:white">Network Nexus</a></button>
-                    <button class="active"><a href="register.html" style="text-decoration: none; color:white">Register</a></button>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration | EKTA</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="register.js" defer></script>
+    </head>
+    <body class="registration-page">
 
+        <header>
+            <!-- Header content, same as the homepage -->
+            <nav>
+                <div class="navbar">
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logo">
+                        <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="We got you, Ask Us!">
+                    </div>
+                    <div class="nav">
+                        <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
+                        <button><a href="Academic.html" style="text-decoration: none; color:white">Academic Aid</a></button>
+                        <button><a href="Job.html" style="text-decoration: none; color:white">Job Hub</a></button>
+                        <button><a href="Experience.html" style="text-decoration: none; color:white">Share Your Experience</a></button>
+                    </div>
+                    <div class="register-button">
+                        <register-button id="registerButton"><a href="register.html" style="text-decoration: none; color:white">Register</a></register-button>
+                    </div>
+                    <div class="user-icon" id="userIcon" style="display:none;">
+                        <!-- You can replace the content below with your user icon HTML or image tag -->
+                    <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
                 </div>
-                <div class="user-icon" id="userIcon">
+            </nav>
+        </header>
 
-                    <!-- You can replace the content below with your user icon HTML or image tag -->
-                   <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
+        <nav class="secondary-nav">
+            <a href="#">Ekta Events</a>
+            <a href="#">UMBC Events</a>
+            <a href="#">Sports Events</a>
+            <a href="#">Internship Fairs</a>
+        </nav>
+
+        <section class="main-content">
+            <div class="left-sidebar">
+                <div class="left-sidebar">
+                <div class="left-nav">
+                    <ul>
+                        <li><a href="#">College Formalities</a></li>
+                        <li><a href="#">Events & Dates</a></li>
+                        <li><a href="#">Emergency Services</a></li>
+                        <li><a href="#">Food & Restaurants</a></li>
+                        <li><a href="#">Alumni Committee GSA</a></li>
+                        <li><a href="#">Baltimore & around</a></li>
+                        <li><a href="#">Forum Posts and Comments</a></li>
+                        <li><a href="#">Legal Formalities</a></li>
+                        <li><a href="#">Transitions & Conveyances</a></li>
+                        <li><a href="#">Finance & Taxes</a></li>
+                    </ul>
                 </div>
             </div>
-        </nav>
+            </div>
+
         
-    </header>
-    <nav class="secondary-nav">
-        <a href="#">Ekta Events</a>
-        <a href="#">UMBC Events</a>
-        <a href="#">Sports Events</a>
-        <a href="#">Internship Fairs</a>
-    </nav>
-<body>
+    <!-- Center Content Section -->
+    <div class="center-content">
 
-    <header>
-        <!-- Header content, same as the homepage -->
-        <!-- Include navigation if needed -->
-    </header>
-
-    <section class="main-content">
         <div class="center-content">
-            <div class="cardd">
+            <div class="form-section">
                 <h2>User Registration</h2><br>
                 <form action="/register" method="POST" id="registrationForm" onsubmit="return validateForm()">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
-<br><br>
+    <br><br>
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-<br><br>
+    <br><br>
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                     <br><br>
@@ -74,15 +92,46 @@
                 </form>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="contact">
-            <h4>Contact Us</h4>
-            <p>Email: ekta@gmail.com</p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
-    </footer>
+    </div>
 
-</body>
-</html>
+
+            <div class="right-sidebar">
+                <div class="link-box">
+                    <h3>Useful Links</h3><br>
+                    <ul class="links">
+                        <!-- Add links as needed -->
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="social-box">
+                    <h3>Follow Us</h3><br>
+                    <ul class="social-links">
+                        <!-- Add social media links as needed -->
+                        <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="contact">
+                <h4>Contact Us</h4>
+                <p>Email: ekta@gmail.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </footer>
+
+    </body>
+    </html>
