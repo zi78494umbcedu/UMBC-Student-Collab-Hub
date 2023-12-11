@@ -256,6 +256,11 @@
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: "smooth" });
+                 // Highlight the H2 heading
+            const h2Heading = targetSection.querySelector('h2');
+            if (h2Heading) {
+                h2Heading.classList.add('highlighted-heading');
+            }
             }
         }
 
