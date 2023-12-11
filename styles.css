@@ -329,7 +329,7 @@ button.active{
     border: 1px solid #ddd;
     padding: 10px;
     align-items: flex-end;
-    max-height: 600px; /* Set a maximum height */
+    max-height: 700px; /* Set a maximum height */
     overflow-y: auto; /* Add a vertical scrollbar if content exceeds the maximum height */
 }
 
