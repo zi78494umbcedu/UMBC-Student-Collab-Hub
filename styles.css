@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: Arial, sans-serif;
+
 }
 
 /* Style the header and navigation */
@@ -242,6 +244,7 @@ button.active{
     grid-template-columns: 17% 66% 17%;
     align-items: stretch; 
     flex: 1; 
+    min-height:850px;
 }
 
 .left-sidebar, .right-sidebar, .center-content {
@@ -263,9 +266,9 @@ button.active{
     /* Styles for the right sidebar */
 }
 .wide-image-container {
-    padding: 50px;
+    padding: 20px;
     text-align:center;
-    object-fit: cover;
+    object-fit:cover;
 
 }
 
@@ -406,6 +409,7 @@ body {
     border: 2px solid #ddd;
 }
 
+
 .cardd {
     width: 100%; /* Make each card take the full width of the container */
     border: 1px solid #ddd; /* Add a border around each card */
@@ -469,6 +473,8 @@ li {
     box-sizing: border-box; /* Include padding and border in the card's total width */
     overflow-y:auto; /* Enable vertical scrolling for the left sidebar */ 
     background-color: #f5f5f5;
+    min-height: 800px; /* Adjust as needed */
+
 }
 /* Add a heading for the left sidebar */
 .left-sidebar-exp h2 {
@@ -482,33 +488,38 @@ li {
     padding: 20px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
     background-color: #f5f5f5;
+    min-height: 800px; /* Adjust as needed */
+
 }
 
 .main-content-housing {
     display:flex;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 2% 98%;
+    flex-direction: row;
     align-items: stretch; 
     background-color: #f5f5f5;
     padding: 20px;
     background-color: #f5f5f5;
     border: 2px solid #ddd;
 }
-.left-sidebar-housing {
-    /* Styles for the left sidebar (75% width) */
+.center-content-housing {
+    display: flex;
+    flex-direction: row; /* Set the direction to column */
+    align-items: center; /* Center-align items horizontally */
     padding: 20px;
-    border: 2px solid #ddd; /* Add a border around each card */
-    box-sizing: border-box; /* Include padding and border in the card's total width */
-    overflow-y:auto; /* Enable vertical scrolling for the left sidebar */ 
     background-color: #f5f5f5;
+    border: 2px solid #ddd;
+}
+.left-sidebar-housing,
+.right-sidebar-housing {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    overflow-y: auto;
 }
 .right-sidebar-housing {
-    /* Styles for the left sidebar (25% width) */
-    border: 2px solid #ddd; /* Add a border around each card */
-    padding: 20px; /* Add padding inside the card */
-    box-sizing: border-box; /* Include padding and border in the card's total width */
-    background-color: #f5f5f5;
-    overflow-y:auto; /* Enable vertical scrolling for the right sidebar */ 
+    margin-left: 10px; /* Add some margin between the two sidebars */
 }
 .bubble {
     display: inline-block;
@@ -522,12 +533,170 @@ li {
     background-color: #f48f0a;
 }
 
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        max-height: 80%;
+    }
+
+    /* Close button styles */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Scaling effect on hover */
+    img {
+        transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
+        cursor: pointer; /* Add cursor pointer on hover */
+        position: relative; /* Ensure the :before pseudo-element is positioned relative to the img */
+        border: 3px solid transparent; /* Border initially transparent */
+    }
+
+    img:hover {
+        transform: scale(1.5);
+        border: 3px solid #ff8c00; /* Highlight color for the border */
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.7); /* Optional shadow effect */
+    }
+
+    /* Visual indicator for clickable images */
+    img:before {
+        content: '\1F50E'; /* Unicode icon for magnifying glass */
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ff8c00; /* Highlight color for the magnifying glass icon */
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    img:hover:before {
+        opacity: 1;
+    }
+    /* Tooltip styles */
+    .tooltip {
+        position: absolute;
+        background-color: #ff8c00; /* Tooltip background color */
+        color: white;
+        padding: 8px;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    /* Show tooltip on hover */
+    img:hover + .tooltip {
+        opacity: 1;
+    }
+  /* CSS styles for the improved bubble list */
+  .bubble-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bubble-list li {
+    position: relative;
+    margin-bottom: 40px; /* Adjust spacing between bubbles */
+}
+
+.bubble-list span {
+    display: inline-block;
+    background-color: #ff8c00; /* Orange color */
+    color: #fff;
+    border-radius: 20px; /* Make it a full bubble */
+    padding: 15px 25px;
+    position: relative;
+}
+
+.bubble-list span:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0;
+    border-color: #ff8c00 transparent transparent transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px; /* Adjust the space between bubbles and arrows */
+}
+
+.bubble-list span:after {
+    content: "";
+    position: absolute;
+    width: 30px; /* Adjust the arrow width */
+    height: 15px; /* Adjust the arrow height */
+    background-color: #ff8c00;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px; /* Adjust the space between bubbles and arrows */
+}
+/* Set a minimum height for sections with smaller content */
+#applicationProcessContent,
+#afterAllocationFormalitiesContent, #registrationForm {
+    min-height: 712px; /* Adjust as needed */
+}
+#center {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+}
+.listing-card,
+.factors-card {
+    width: 49%; /* Adjust width as needed */
+    border: 1px solid #ddd; /* Add border for aesthetic */
+    background-color: #f5f5f5; /* Adjust as needed */
+    padding: 20px;
+}
+.listing-card h4,
+.factors-card h4 {
+    margin-bottom: 10px;
+}
+.listing-card p,
+.factors-card p {
+    margin-bottom: 0;
+}
+
+.listing-card {
+    background-color: #f0f0f0; /* Adjust as needed */
+}
+
+.factors-card {
+    background-color: #e0e0e0; /* Adjust as needed */
+}
 .heighted-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 2%;
-    margin-bottom: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px;
 }
 
 .heighted-buttons button {
@@ -537,10 +706,18 @@ li {
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    width: 40%; /* Adjust width as needed */
+    margin: 0 10px; /* Add margin between buttons */
 }
 
 .heighted-buttons button:hover {
     background-color: #f48f0a;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 
