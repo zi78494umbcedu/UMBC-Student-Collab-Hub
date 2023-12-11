@@ -873,6 +873,10 @@ li {
 }
 
 .main-content-academic {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom:20px;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     align-items: stretch; 
@@ -896,6 +900,10 @@ li {
 
 /* Styling for the bullet points in this section */
 .main-content-academic ul li::before {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom:20px;
     content: '\2022'; /* Bullet point */
     color: #ff8c00;
     font-weight: bold;
