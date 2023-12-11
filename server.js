@@ -4,8 +4,29 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors'); // Add this line
 const path = require('path');
+const mysql = require('mysql');
 
+const app = express();
+const corsOptions = {
+    origin: 'http://localhost:8080',
+    credentials: true,
+    // Add any other CORS options you need
+};
 
+app.use(cors(corsOptions));
+app.use(express.json());
+
+const registeredUsers = [];
+var __dirname = '/Users/ashwingupta/Desktop/SENG-701 Capstone/Git/BetaFrontend/UMBC-Student-Collab-Hub';
+
+app.use(express.static(path.join(__dirname+ 'images')));
+//Use express-session middleware
+app.use(session({
+    secret:'ashwin',
+    resave:false,
+    saveUninitialized:true,
+    cookie:{secure:true}
+}));
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -22,11 +43,15 @@ app.get('/testimonials', (req, res) => {
     });
 });
 
-const app = express();
-app.use(cors());
-const registeredUsers = [];
-var __dirname = '/Users/ashwingupta/Desktop/SENG-701 Capstone/Git/BetaFrontend/UMBC-Student-Collab-Hub';
-app.use(express.static(__dirname+ '/images'));
+app.post('/register', express.json(), (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Store user details in memory (in a real application, you'd use a database)
+    registeredUsers.push({ username, email, password });
+
+    // Send a response back to the client
+    res.json({ message: 'Registration successful' });
+});
 
 // Add this endpoint to handle user registration
 app.post('/register', express.json(), (req, res) => {
@@ -53,16 +78,10 @@ app.get('/index', (req, res) => {
 app.get('/register', (req, res) => {
     res.sendFile(__dirname + '/register.html');
 });
-//Use express-session middleware
-app.use(session({
-    secret:'ashwin',
-    resave:false,
-    saveUninitialized:true,
-    cookie:{secure:true}
-}));
+
 
 //Endpoint to set up a session
-app.set('/login', (req, res)=>{
+app.post('/login', (req, res)=>{
     req.session.user = { username: 'exampleUser'};
     res.send('Logged in successfully!');
 });

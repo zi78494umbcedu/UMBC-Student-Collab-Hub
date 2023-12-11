@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
         <!-- Header content, same as the homepage -->
         <nav>
             <div class="navbar">
                 <div class="hamburger-menu">
+                    <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -34,19 +34,25 @@
                 </div>
                 <div class="user-icon" id="userIcon" style="display:none;">
                     <!-- You can replace the content below with your user icon HTML or image tag -->
-                   <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
+                <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
             </div>
         </nav>
     </header>
-
+    
     <nav class="secondary-nav">
-        <a href="#">Ekta Events</a>
-        <a href="#">UMBC Events</a>
-        <a href="#">Sports Events</a>
-        <a href="#">Internship Fairs</a>
+        <div class="ticker-container">
+            <div class="ticker">
+                <!-- Up arrow special character: &#9650; -->
+                <!-- Down arrow special character: &#9660; -->
+                <!-- Example content -->
+                &#9650; Ekta Events &nbsp;&nbsp;&nbsp; &#9650; UMBC Events &nbsp;&nbsp;&nbsp; &#9660; Sports Events &nbsp;&nbsp;&nbsp; &#9660; Internship Fairs
+            </div>
+        </div>
     </nav>
+    
 
     <section class="main-content">
+        
         <div class="left-sidebar">
             <div class="left-sidebar">
                 <div class="left-nav">
@@ -65,117 +71,115 @@
                 </div>
             </div>
         </div>
-      
- <!-- Center Content Section -->
- <div class="center-contentt">
-
-   
-    <div class="cardd">
-        <h2>Step1: Search for Accommodation</h2>
-        <ul><br>
-            <li>List of available options
-                <ul>
-                    <!-- Link to Housing Apartment 1 with distance -->
-                    <li><a href="https://www.apartments.com/maiden-choice-apartments-halethorpe-md/esqf4yp/#descriptionSection">1.Maiden Choice Apartments</a> - 2 mile from campus</li>
-                    
-                    <!-- Link to Housing Apartment 2 with distance -->
-                    <li><a href="https://www.regionalmgmt.com/locations/westland-gardens-apartments-and-townhouses/?community=Westland%20Gardens%20Apartments%20and%20Townhouses">2.Westland Housing Apartments</a> - 3 miles from campus</li>
-                    
-                    <!-- Link to Housing Apartment 3 with distance -->
-                    <li><a href="https://www.caral-gardens.com/#">3.Carol Gardens</a> - 6 miles from campus</li>
-                    
-                    <!-- Link to Housing Apartment 4 with distance -->
-                    <li><a href="https://www.cr-mountridgeapts.com">4.Mount Ridge Apartments</a> - 8 miles from campus</li>
-                    
-                    <!-- Link to Housing Apartment 5 with distance -->
-                    <li><a href="https://www.jamestowne-apts.com/?utm_knock=a#">5.Jamestowne Apartments</a> - 10 miles from campus</li>
-                </ul>
-            </li><br>
-            <li><u>Factors to consider when considering options:</u>
-                <ul>
-                    <li>A.Grocery stores around (Weiss, Walmart, Giant)</li>
-                    <li>B.Bus stops and external busses</li>
-                    <li>C.Distance from campus</li>
-                    <li>D.Varied amenities charges
+    
+<!-- Center Content Section -->
 
 
-                        <ul>   <br>
-                            <li><pre>1.Safety</li></pre>
-                            <li><pre>2.WiFi setup</li></pre>
-                            <li><pre>3.Water charges</li></pre>
-                            <li><pre>4.Sewage charges</li></pre>
-                            <li><pre>5.Laundry in house</li></pre>
-                            <li><pre>6.Gardening charges</li></pre>
-                            <li><pre>7.Electricity and gas</li></pre>
-                            <li><pre>8.Phone carrier connectivity</li></pre>
-                            <li><pre>9.Neighbourhood, supports student housing</li></pre>
+<section class="main-content-housing">
+    <div class="heighted-buttons">
+        <!-- Previous and Next buttons go here -->
+        <button id="previousButton">Previous</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <div class="left-sidebar-housing">
+        <br>
+            <h4><u>Accommodation Hunt</u></h4>
+            <ul><br>
+                <li>
+                    <ul>
+                        <li><a href="https://www.apartments.com/maiden-choice-apartments-halethorpe-md/esqf4yp/#descriptionSection">1. Maiden Choice Apartments</a> - 2 miles from campus</li>
+                        <img src="images/maiden.webp" alt="Maiden Choice Apartments" width="100" height="100">
+                        <li><a href="https://www.regionalmgmt.com/locations/westland-gardens-apartments-and-townhouses/?community=Westland%20Gardens%20Apartments%20and%20Townhouses">2. Westland Housing Apartments</a> - 3 miles from campus</li>
+                        <img src="images/westland.jpeg" alt="Maiden Choice Apartments" width="100" height="100">
+                        <li><a href="https://www.caral-gardens.com/#">3. Carol Gardens</a> - 6 miles from campus</li>
+                        <img src="images/carol.jpeg" alt="Maiden Choice Apartments" width="100" height="100">
+                        <li><a href="https://www.cr-mountridgeapts.com">4. Mount Ridge Apartments</a> - 8 miles from campus</li>
+                        <img src="images/ridge.webp" alt="Maiden Choice Apartments" width="100" height="100">
+                        <li><a href="https://www.jamestowne-apts.com/?utm_knock=a#">5. Jamestowne Apartments</a> - 10 miles from campus</li>
+                        <img src="images/jamestowne.jpeg" alt="Maiden Choice Apartments" width="100" height="100">
                         </ul>
-                    </li>
+                </li><br>
                 </ul>
-            </li>
-        </ul>
+        </div>
     </div>
-
-    <div class="cardd">
-        <h2>Step2: Application Process</h2><br>
-        <ul>
-            <li>1.Getting in contact with the right housing manager</li>
-            <li>2.Checking timeline for allocation verdicts</li>
-            <li>3.Checking provided amenities</li>
-            <li>4.Checking application fees</li>
-            <li>5.Regular updates</li>
-        </ul>
+    <div class="right-sidebar-housing"><br>
+        <h4><u>Factors Influencing Your Buy</u></h4]>
+            <ul class="factor-list">
+                <li>A. Grocery stores around (Weiss, Walmart, Giant)</li>
+                <li>B. Bus stops and external busses</li>
+                <li>C. Distance from campus</li>
+                <li>D. Varied amenities charges
+                    <ul><br>
+                        <li class="bubble">1. Safety</li><br>
+                        <li class="bubble">2. WiFi setup</li><br>
+                        <li class="bubble">3. Water charges</li><br>
+                        <li class="bubble">4. Sewage charges</li><br>
+                        <li class="bubble">5. Laundry in-house</li><br>
+                        <li class="bubble">6. Gardening charges</li><br>
+                        <li class="bubble">7. Electricity and gas</li><br>
+                        <li class="bubble">8. Phone carrier connectivity</li><br>
+                        <li class="bubble">9. Neighbourhood, supports student housing</li><br>
+                    </ul>
+                </li>
+            </ul>
+        </li>
     </div>
-
-    <div class="cardd">
-        <h2>Step3: After Allocation Formalities</h2><br>
-        <ul>
-            <li>1.Check-ins</li>
-            <li>2.Renovation</li>
-            <li>3.Hidden charges</li>
-            <li>4.Possession procedure</li>
-        </ul>
-    </div>
-
 </div>
 
+<script>
+    // Add your JavaScript logic for handling previous and next buttons here
+    const previousButton = document.getElementById('previousButton');
+    const nextButton = document.getElementById('nextButton');
 
-        <div class="right-sidebar">
-            <div class="link-box">
-                <h3>Useful Links</h3><br>
-                <ul class="links">
-                    <!-- Add links as needed -->
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
+    // Add event listeners for previous and next button clicks
+    previousButton.addEventListener('click', () => {
+        // Handle previous button click
+        // You can navigate to the previous page or update content accordingly
+    });
+
+    nextButton.addEventListener('click', () => {
+        // Handle next button click
+        // You can navigate to the next page or update content accordingly
+    });
+</script>
+</section>
+
+
+<div class="right-sidebar">
+        <div class="link-box">
+            <h3>Home For You Here</h3><br>
+            <div class="wide-image">
+                <img src="images/commons.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
             </div>
-
-            <div class="social-box">
-                <h3>Follow Us</h3><br>
-                <ul class="social-links">
-                    <!-- Add social media links as needed -->
-                    <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
-                    <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
-                </ul>
+            <br>
+            <div class="wide-image">
+                <img src="images/food.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+            </div>
+            <br>  
+            <div class="wide-image">
+                <img src="images/diwali.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="contact">
-            <h4>Contact Us</h4>
-            <p>Email: ekta@gmail.com</p>
-            <p>Phone: (123) 456-7890</p>
+        <div class="social-box">
+            <h3>Follow Us</h3><br>
+            <ul class="social-links">
+                <!-- Add social media links as needed -->
+                <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
+                <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
+            </ul>
         </div>
-    </footer>
+    </div>
+</section>
+
+<footer>
+    <div class="contact">
+        <h4>Contact Us</h4>
+        <p>Email: ekta@gmail.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+</footer>
 
 </body>
 </html>

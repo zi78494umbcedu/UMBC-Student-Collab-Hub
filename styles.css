@@ -14,6 +14,11 @@ header {
     background-color: #eaf2f8;
     color: #fff;
     height:75px;
+    background-image: url('images/hgrey.jpeg'); /* Replace with your image file name and extension */
+    background-size: cover; /* Adjust as needed: 'cover', 'contain', or specific dimensions */
+    background-position: center; /* Adjust as needed: 'center', 'top', 'left', etc. */
+    background-repeat: no-repeat; /* Prevent repeating for a single background image */
+    /* Add other styles as needed */
 }
 
 .navbar {
@@ -22,6 +27,46 @@ header {
     align-items: center;
     padding: 10px 20px;
 }
+
+/* Example CSS for Responsive Navigation */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Change to column layout on small screens */
+    }
+
+    .nav a {
+        width: 100%; /* Make links take full width on small screens */
+        margin: 5px 0; /* Adjust margin for spacing */
+    }
+}
+
+/* TICKER STYLING */
+.ticker-container {
+    overflow: hidden;
+    height: 20px; /* Adjust the height as needed */
+
+}
+
+.ticker {
+    color:red;
+    display: inline-block;
+    white-space: nowrap;
+    animation: tickerAnimation 10s linear infinite;
+    padding-left: 100%; /* Start off-screen */
+    letter-spacing: 5px; /* Adjust the letter-spacing as needed */
+    font-weight:bolder; /* Make the text bold */
+}
+
+@keyframes tickerAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/*END HERE FOR TICKER STYLING*/
+
 
 .hamburger-menu {
     display: block; /* Hide initially on larger screens */
@@ -32,13 +77,28 @@ header {
 }
 
 .hamburger-menu:hover{
-    background-color: #eaf2f8;
+    background-color: #f48f0a;
 }
+
 .bar {
     width: 25px;
     height: 3px;
     background-color: #fff;
     margin: 4px 0;
+}
+/* Media query to show burger menu on small screens */
+@media only screen and (max-width: 600px) {
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger-menu .bar {
+        background-color: #fff;
+        height: 3px;
+        margin: 6px 0;
+        width: 25px;
+    }
 }
 
 .logo {
@@ -47,50 +107,54 @@ header {
 	margin-right: 20px;
 }
 
+
 .search-bar {
     flex: 1;
+    display: flex;
     padding: 10px;
-	margin-right: 20px;
+	margin-right: 40px;
 }
 
 .search-bar input {
-    width: 100%;
-    padding: 10px 10px 10px 20px;
+    width: 60%;
+    padding: 10px 20px;
     border: none;
     border-radius: 20px;
 }
 
 .nav-buttons {
-    flex: 3;
-    align-items: center;
+    flex: 1;
+    display: flex; /* Use flex display for alignment */
+    align-items:center;
 }
 
 button {
+    font-size: 12px; /* Adjust the font size as needed */
     background-color: #5c5a5a;
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding: 10px 30px 10px;
+    padding: 10px 15px;
     cursor: pointer;
-    width: 196.36px;
-    background-size: 75px 60px; 
-    order: 1;
+    width: 140px;
+    flex:1;
     margin-right: 10px;
+    /* Add the following styles for consistent button height */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+
 }
 
 register-button {
+    font-size: 12px;
     background-color: #5c5a5a;
     color: #fff;
     border: none;
     border-radius: 10px;
-    padding: 10px 10px 10px;
+    padding: 10px 10px;
     cursor: pointer;
-    width: 10px;
-    order: 2;
+    flex:1;
+    margin-right: 10px; /* Adjust margin between buttons */
 }
-
-
-
 
 /* Style for the "Register" button */
 .register-button a {
@@ -105,10 +169,28 @@ register-button {
 .register-button a:hover {
     background-color: #f48f0a; /* Orange color for hover and active state */
 }
+
 /* Add a style for the "Register" button when on the registration page */
 .registration-page .register-button a {
     background-color: #f48f0a; /* Orange color for the active state */
 }
+
+/* Apply consistent styling for buttons */
+button, .form-section button, .register-button a {
+    background-color: #5c5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+/* Change button background color on hover */
+button:hover, .form-section button:hover, .register-button a:hover {
+    background-color: #f48f0a; /* Adjust the hover color as needed */
+}
+
 
 button:hover {
     background-color: #f48f0a; /* Change color on hover */
@@ -116,6 +198,19 @@ button:hover {
 
 
 
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .nav-buttons {
+        flex-direction: column; /* Change to column layout on small screens */
+        align-items: flex-start; /* Align items to the start of the column */
+    }
+
+    button,
+    register-button {
+        margin-right: 0; /* Remove margin for better spacing in column layout */
+        margin-bottom: 10px; /* Add margin between buttons in column layout */
+    }
+}
 /* Apply a different style to the active button (Housing) */
 
 button.active{
@@ -144,7 +239,7 @@ button.active{
 
 .main-content {
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 17% 66% 17%;
     align-items: stretch; 
     flex: 1; 
 }
@@ -186,7 +281,7 @@ button.active{
     border: 1px solid #ddd; /* Add a border */
     margin-top: 10px;
     margin-bottom: 0;
-    font-size: small;
+    font-size:medium;
 }
 
 .left-sidebar {
@@ -316,9 +411,34 @@ body {
     border: 1px solid #ddd; /* Add a border around each card */
     padding: 10px; /* Add padding inside the card */
     box-sizing: border-box; /* Include padding and border in the card's total width */
-    
     background-color: #f5f5f5;
     border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.cardd img {
+    border-bottom: 1px solid #ddd;
+}
+
+.factor-list {
+    padding: 20px;
+    text-align: left;
+}
+
+.factor-list li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .center-contentt {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardd {
+        width: 100%;
+    }
 }
 h2 {
     color: #333;
@@ -341,7 +461,6 @@ li {
     padding: 20px;
     background-color: #f5f5f5;
     border: 2px solid #ddd;
-
 }
 .left-sidebar-exp {
     /* Styles for the left sidebar (75% width) */
@@ -357,7 +476,6 @@ li {
     font-size: 26px;
     margin-bottom: 10px;
 }
-
 .right-sidebar-exp {
     /* Styles for the left sidebar (25% width) */
     border: 2px solid #ddd; /* Add a border around each card */
@@ -365,6 +483,67 @@ li {
     box-sizing: border-box; /* Include padding and border in the card's total width */
     background-color: #f5f5f5;
 }
+
+.main-content-housing {
+    display:flex;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 2% 98%;
+    align-items: stretch; 
+    background-color: #f5f5f5;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+}
+.left-sidebar-housing {
+    /* Styles for the left sidebar (75% width) */
+    padding: 20px;
+    border: 2px solid #ddd; /* Add a border around each card */
+    box-sizing: border-box; /* Include padding and border in the card's total width */
+    overflow-y:auto; /* Enable vertical scrolling for the left sidebar */ 
+    background-color: #f5f5f5;
+}
+.right-sidebar-housing {
+    /* Styles for the left sidebar (25% width) */
+    border: 2px solid #ddd; /* Add a border around each card */
+    padding: 20px; /* Add padding inside the card */
+    box-sizing: border-box; /* Include padding and border in the card's total width */
+    background-color: #f5f5f5;
+    overflow-y:auto; /* Enable vertical scrolling for the right sidebar */ 
+}
+.bubble {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 5px;
+}
+.bubble:hover {
+    background-color: #f48f0a;
+}
+
+.heighted-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2%;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.heighted-buttons button {
+    background-color: #5c5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.heighted-buttons button:hover {
+    background-color: #f48f0a;
+}
+
+
 /* Add space between each testimonial */
 .testimonial {
     margin-top: 10px;
@@ -397,13 +576,14 @@ li {
 
 /* Hover effect for the button */
 .testimonial button:hover {
-    background-color: #444; /* Change background color on hover */
+    background-color: #f48f0a; /* Change background color on hover */
 }
 
 .form-section {
     margin-top: 20px;
     text-align: left; /* Align the form elements to the left */
 }
+
 
 .form-section p {
     margin-bottom: 10px;
@@ -412,7 +592,7 @@ li {
 /* Style for form labels */
 .form-section label {
     display: inline-block;
-    width: 80px; /* Adjust the width of labels as needed */
+    width: 140px; /* Adjust the width of labels as needed */
     margin-bottom: 5px; /* Add some space between labels and input boxes */
 }
 .form-section input,
@@ -427,6 +607,7 @@ li {
 /* Style for the story textarea to make it wider in height */
 .form-section textarea {
     height: 150px; /* Adjust the height as needed */
+
 }
 
 
@@ -439,6 +620,57 @@ li {
     padding: 10px 20px;
     cursor: pointer;
 }
+.form-section button:hover {
+    background-color: #f48f0a;
+}
+/* Add this to your styles.css file */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    z-index: 1000;
+    border: 2px solid #3498db; /* Border color */
+}
+
+.popup-content {
+    text-align: left;
+    color: #333;
+    line-height: 1.6;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Style the headings inside the popup content */
+.popup-content h2,
+.popup-content p {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the lines between the information */
+.popup-content p::before {
+    content: "•";
+    margin: 0 8px;
+    color: #555;
+}
+
+
 
 .story{
 }
@@ -473,6 +705,11 @@ li {
 
 /* Style the footer */
 footer {
+    background-image: url('images/hgrey.jpeg'); /* Replace with your image file name and extension */
+    background-size: cover; /* Adjust as needed: 'cover', 'contain', or specific dimensions */
+    background-position: center; /* Adjust as needed: 'center', 'top', 'left', etc. */
+    background-repeat: no-repeat; /* Prevent repeating for a single background image */
+    /* Add other styles as needed */
     background-color: #eaf2f8;
     color: #17202a;
     text-align: center;

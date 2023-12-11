@@ -2,218 +2,249 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Share Your Experience | EKTA</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Your Experience | EKTA</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="experience.js"></script>
+
 </head>
 
 <body>
 
-    <header>
-        <!-- Header content, same as the homepage -->
-        <nav>
-            <div class="navbar">
-                <div class="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="logo">
-                    <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="We got you, Ask Us!">
-                </div>
-                <div class="nav">
-                    <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
-                    <button><a href="Academic.html" style="text-decoration: none; color:white">Academic Aid</a></button>
-                    <button><a href="Job.html" style="text-decoration: none; color:white">Job Hub</a></button>
-                    <button class="active"><a href="Experience.html" style="text-decoration: none; color:white">Share Your Experience</a></button>
-                </div>
-                <div class="register-button">
-                    <register-button id="registerButton"><a href="register.html" style="text-decoration: none; color:white">Register</a></register-button>
-                </div>
-                <div class="user-icon" id="userIcon" style="display:none;">
-                    <!-- You can replace the content below with your user icon HTML or image tag -->
-                   <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
-                </div>
+<header>
+    <!-- Header content, same as the homepage -->
+    <nav>
+        <div class="navbar">
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-        </nav>
-    </header>
-    <nav class="secondary-nav">
-        <a href="#">Ekta Events</a>
-        <a href="#">UMBC Events</a>
-        <a href="#">Sports Events</a>
-        <a href="#">Internship Fairs</a>
+            
+            <div class="logo">
+                <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="We got you, Ask Us!">
+            </div>
+            <div class="nav">
+                <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
+                <button><a href="Academic.html" style="text-decoration: none; color:white">Academic Aid</a></button>
+                <button><a href="Job.html" style="text-decoration: none; color:white">Job Hub</a></button>
+                <button class="active"><a href="Experience.html" style="text-decoration: none; color:white">Share Your Experience</a></button>
+            </div>
+            <div class="register-button">
+                <register-button id="registerButton"><a href="register.html" style="text-decoration: none; color:white">Register</a></register-button>
+            </div>
+            <div class="user-icon" id="userIcon" style="display:none;">
+                <!-- You can replace the content below with your user icon HTML or image tag -->
+                <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
+            </div>
+        </div>
     </nav>
-    <section class="main-content">
-        <div class="left-sidebar">
-            <div class="left-sidebar">
-            <div class="left-nav">
-                <ul>
-                    <li><a href="#">College Formalities</a></li>
-                    <li><a href="#">Events & Dates</a></li>
-                    <li><a href="#">Emergency Services</a></li>
-                    <li><a href="#">Food & Restaurants</a></li>
-                    <li><a href="#">Alumni Committee GSA</a></li>
-                    <li><a href="#">Baltimore & around</a></li>
-                    <li><a href="#">Forum Posts and Comments</a></li>
-                    <li><a href="#">Legal Formalities</a></li>
-                    <li><a href="#">Transitions & Conveyances</a></li>
-                    <li><a href="#">Finance & Taxes</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-
-      
- <!-- Center Content Section -->
- 
- <section class="main-content-exp">
-    <div class="left-sidebar-exp">
-        <!-- Testimonial Display Section (Left 60% width) -->
-        <h2>Testimonials For You.!</h2>
-        <div class="testimonial-section">
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: John Doe</h3>
-                <p>Role: Student</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "It was a great experience at UMBC. The faculty were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Joseph D'souza</h3>
-                <p>Role: Academic Counsellor</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "Do consider checking this a prospect, UMBC. The prerogative were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Marie Doe</h3>
-                <p>Role: Chancellor</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "My name is Marie Doe. I am a PHD Chancellor at UMBC. The infrastructure at...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Martha Dominiguez</h3>
-                <p>Role: Student</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Krish Kelper</h3>
-                <p>Role: Student</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Johnson Monroe</h3>
-                <p>Role: Student</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
-            <div class="testimonial" id="testimonial1">
-                <h3>Name: Partix Wilson</h3>
-                <p>Role: Student</p>
-                <p>Category: Academic</p>
-                <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-                <button onclick="readMore('testimonial1')">Read More</button>
-                <!-- Add more testimonials as needed -->
-            </div>
+</header>
+<nav class="secondary-nav">
+    <div class="ticker-container">
+        <div class="ticker">
+            <!-- Up arrow special character: &#9650; -->
+            <!-- Down arrow special character: &#9660; -->
+            <!-- Example content -->
+            &#9650; Ekta Events &nbsp;&nbsp;&nbsp; &#9650; UMBC Events &nbsp;&nbsp;&nbsp; &#9660; Sports Events &nbsp;&nbsp;&nbsp; &#9660; Internship Fairs
         </div>
     </div>
-    <div class="right-sidebar-exp">
-        <!-- Testimonial Submission Form (Right 25% width) -->
-        <div class="form-section">
-            <h2>Share Your Experience With Us.</h2>
-            <p>We'd love to hear about your experiences at UMBC. Share your stories with us!</p>
-            <br>
+</nav>
+<section class="main-content">
+    <div class="left-sidebar">
+        <div class="left-sidebar">
+        <div class="left-nav">
+            <ul>
+                <li><a href="#">College Formalities</a></li>
+                <li><a href="#">Events & Dates</a></li>
+                <li><a href="#">Emergency Services</a></li>
+                <li><a href="#">Food & Restaurants</a></li>
+                <li><a href="#">Alumni Committee GSA</a></li>
+                <li><a href="#">Baltimore & around</a></li>
+                <li><a href="#">Forum Posts and Comments</a></li>
+                <li><a href="#">Legal Formalities</a></li>
+                <li><a href="#">Transitions & Conveyances</a></li>
+                <li><a href="#">Finance & Taxes</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
 
-            <form action="/submitTestimonial" method="POST" onsubmit="return validateForm()">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required><br>
-                <label for="category">Role</label>
-                <select id="category" name="category">
-                    <option value="student">Student</option>
-                    <option value="admin">Admin</option>
-                    <option value="professor">Professor</option>
-                    <option value="parent">Parent</option>
-                    <!-- Add more categories as needed -->
-                </select><br>
+    
+<!-- Center Content Section -->
+
+<section class="main-content-exp">
+<div class="left-sidebar-exp">
+    <!-- Testimonial Display Section (Left 60% width) -->
+    <h2>Testimonials For You.!</h2>
+    <div class="testimonial-section">
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: John Doe</h3>
+            <p>Role: Student</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "It was a great experience at UMBC. The faculty were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were really engaging and humble and ready to help at convenience and assurance.')">Read More</button>
+
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Joseph D'souza</h3>
+            <p>Role: Academic Counsellor</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "Do consider checking this a prospect, UMBC. The prerogative were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Marie Doe</h3>
+            <p>Role: Chancellor</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "My name is Marie Doe. I am a PHD Chancellor at UMBC. The infrastructure at...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Martha Dominiguez</h3>
+            <p>Role: Student</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Krish Kelper</h3>
+            <p>Role: Student</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Johnson Monroe</h3>
+            <p>Role: Student</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <div class="testimonial" id="testimonial1">
+            <h3>Name: Partix Wilson</h3>
+            <p>Role: Student</p>
+            <p>Category: Academic</p>
+            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
+            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </div>
+</div>
+<div class="right-sidebar-exp">
+    <!-- Testimonial Submission Form (Right 25% width) -->
+    <div class="form-section">
+        <h2>Share Your Experience With Us.</h2>
+        <p>We'd love to hear about your experiences at UMBC. Share your stories with us!</p>
+        <br>
+
+        <form action="/submitTestimonial" method="POST" onsubmit="return validateForm()">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="category">Role</label>
+            <select id="category" name="category">
+                <option value="Student">Student</option>
+                <option value="Alumni">Alumni</option>
+                <option value="Professor">Professor</option>
+                <option value="Staff">Staff</option>
+                <option value="Parent/Guardian">Parent/Guardian</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Visitor">Visitor</option>
+                <option value="Researcher">Researcher</option>
+                <option value="Intern">Intern</option>
+                <option value="Prospective Student">Prospective Student</option>
+                <!-- Add more categories as needed -->
+            </select><br>
                 <label for="category">Category</label>
                 <select id="category" name="category">
-                    <option value="academic">Academic</option>
-                    <option value="housing">Housing</option>
-                    <!-- Add more categories as needed -->
-                </select><br>
-                <label for="story">Your Story</label><br>
-                <textarea id="story" name="story" required></textarea><br><br>
-                <button type="submit">Submit</button>
-            </form>
+                    <option value="academic">Academic Experience</option>
+                    <option value="housing">Housing and Accommodation</option>
+                    <option value="campus-life">Campus Life</option>
+                    <option value="extracurricular">Extracurricular Activities</option>
+                    <option value="internships-jobs">Internships and Jobs</option>
+                    <option value="events-activities">Events and Activities</option>
+                    <option value="campus-resources">Campus Resources</option>
+                    <option value="transition-adjustment">Transition and Adjustment</option>
+                    <option value="social-life">Social Life</option>
+                    <option value="research-projects">Research and Projects</option>
+                <!-- Add more categories as needed -->
+            </select><br>
+            <label for="story">Your Story</label><br>
+            <textarea id="story" name="story" required></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+</section>
+
+
+    <div class="right-sidebar">
+        <div class="link-box">
+            <h3>Home For You Here</h3><br>
+            <div class="wide-image">
+                <img src="images/commons.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+            </div>
+            <br>
+            <div class="wide-image">
+                <img src="images/food.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+            </div>
+            <br>  
+            <div class="wide-image">
+                <img src="images/diwali.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+            </div>
+        </div>
+        <div class="social-box">
+            <h3>Follow Us</h3><br>
+            <ul class="social-links">
+                <!-- Add social media links as needed -->
+                <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
+                <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
+            </ul>
         </div>
     </div>
 </section>
 
+<footer>
+    <div class="contact">
+        <h4>Contact Us</h4>
+        <p>Email: ekta@gmail.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+</footer>
+<script>
+    function readMore(testimonialId) {
+        // Add logic to expand the testimonial or navigate to a separate page
+        console.log(`Read more clicked for testimonial ${testimonialId}`);
+    }
 
-        <div class="right-sidebar">
-            <div class="link-box">
-                <h3>Useful Links</h3><br>
-                <ul class="links">
-                    <!-- Add links as needed -->
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-            </div>
+    function validateForm() {
+        // Add validation logic here
+        return true; // Return true if the form is valid, false otherwise
+    }
+</script>
+<!-- Include this div for the popup container in your HTML -->
+<div id="popup-container" class="popup">
+    <div class="popup-content" id="popup-content-container">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <!-- Use innerHTML to interpret HTML content, including line breaks -->
+        <div id="popup-content-inner"></div>
+    </div>
+</div>
 
-            <div class="social-box">
-                <h3>Follow Us</h3><br>
-                <ul class="social-links">
-                    <!-- Add social media links as needed -->
-                    <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
-                    <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="contact">
-            <h4>Contact Us</h4>
-            <p>Email: ekta@gmail.com</p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
-    </footer>
-    <script>
-        function readMore(testimonialId) {
-            // Add logic to expand the testimonial or navigate to a separate page
-            console.log(`Read more clicked for testimonial ${testimonialId}`);
-        }
-
-        function validateForm() {
-            // Add validation logic here
-            return true; // Return true if the form is valid, false otherwise
-        }
-    </script>
 </body>
 </html>
