@@ -872,6 +872,80 @@ li {
     color: #fff;
 }
 
+.main-content-academic {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: stretch; 
+    flex: 1; 
+    min-height:850px;
+}
+/* Style for each content section */
+.content-section {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+.main-content-academic .content-section {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.main-content-academic .content-section:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for the bullet points in this section */
+.main-content-academic ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #ff8c00;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Adding animation to the bullet points in this section */
+.main-content-academic ul li {
+    margin-bottom: 10px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.5s forwards;
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Style for the bullet list */
+.styled-list {
+    list-style-type: disc; /* Use 'disc' for filled bullets or 'circle' for outlined bullets */
+}
+
+/* Hover effect for list items */
+.styled-list li:hover {
+    color: #ff8c00;; /* Change the color on hover to your preference */
+    cursor: pointer; /* Change the cursor to indicate interactivity */
+}
+.main-content-job-hub {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom:20px;
+    display: grid;
+    grid-template-rows: 40% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns: 50% 50%;
+    align-items: stretch; 
+    flex: 1; 
+    min-height:850px;
+    border-width: 2px;
+}
+.main-content-job-hub .content-section:hover {
+    transform: scale(1.05);
+}
 .story{
 }
 /* Style the hero section */
