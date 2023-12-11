@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EKTA</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -60,43 +60,41 @@
                 <nav class="left-nav">
                     <ul>
                         <li><a href="Services1.html">College Formalities</a></li>
-                        <li><a href="Services2.html">Events & Dates</a></li>
-                        <li><a href="Services3.html">Emergency Services</a></li>
-                        <li><a href="Services4.html">Food & Restaurants</a></li>
-                        <li><a href="Services5.html">Alumni Committee GSA</a></li>
-                        <li><a href="Services6.html">Baltimore & around</a></li>
-                        <li><a href="Services7.html">Forum Posts and Comments</a></li>
-                        <li><a href="Services8.html">Legal Formalities</a></li>
-                        <li><a href="Services9.html">Transitions & Conveyances</a></li>
-                        <li><a href="Services10.html">Finance & Taxes</a></li>
-                        <!-- Add more list items as needed -->
+                        <li><a href="Services2.html" onclick="showCard2">Events & Dates</a></li>
+                        <li><a href="Services3.html" onclick="showCard3">Emergency Services</a></li>
+                        <li><a href="Services4.html" onclick="showCard4">Food & Restaurants</a></li>
+                        <li><a href="Services5.html" onclick="showCard5">Alumni Committee GSA</a></li>
+                        <li><a href="Services6.html" onclick="showCard6">Baltimore & around</a></li>
+                        <li><a class="hglt" href="Services7.html" style="color:#fff;">Forum Posts and Comments</a></li>
+                        <li><a href="Services8.html" onclick="showCard8">Legal Formalities</a></li>
+                        <li><a href="Services9.html" onclick="showCard9">Transitions & Conveyances</a></li>
+                        <li><a href="Services10.html" onclick="showCard10">Finance & Taxes</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="center-content">
-            <div class="center-content">
-                <div class="main-section">
-                    <section class="wide-image-container">
-                        <div>
-                        </div>
-                        <div class="wide-image">
-                            <img src="images/Ekta logo.jpeg" alt="EKTA logo" width="550" height="700"> 
-                        </div>
-                      
-                    </section>
-                    
-                </div>
-                
-            </div>
-            <div class="remaining-text">
-                <p>
-                    Welcome to the UMBC Indian Student Community Hub!<br><br>
-                    Your all-in-one guide. Our mission is to simplify your transition, offering a helping hand and a friendly face as you embark on this life-changing journey. With resources for finding affordable housing around campus, academic assistance of all forms, cultural experiences, and vibrant connections, we’re here to ensure you thrive in your new academic home.<br><br>
-                    Our team is comprised of current and former UMBC students who understand the challenges and opportunities you would face. So, dive in, explore what we have to offer, and let’s make your time at UMBC an unforgettable one!
-                </p>
-            </div>
-            
+            <div class="card-container">
+                <!-- Row 1 -->
+                <div class="card" id="card1">College Formalities Content</div>
+                <div class="card" id="card2">Events & Dates Content</div>
+
+                <!-- Row 2 -->
+                <div class="card" id="card3">Emergency Services Content</div>
+                <div class="card" id="card4">Food & Restaurants Content</div>
+
+                <!-- Row 3 -->
+                <div class="card" id="card5">Alumni Committee GSA Content</div>
+                <div class="card" id="card6">Baltimore & around Content</div>
+
+                <!-- Row 4 -->
+                <div class="card" id="card7" style="background-image: url('images/user.png');">Forum Posts and Comments Content</div>
+                <div class="card" id="card8">Legal Formalities Content</div>
+
+                <!-- Row 5 -->
+                <div class="card" id="card9">Transitions & Conveyances Content</div>
+                <div class="card" id="card10">Finance & Taxes Content</div>
+            </div>            
         </div>
         <div class="right-sidebar">
             <div class="right-content">
