@@ -48,12 +48,20 @@ function filterItems(query) {
 function handleSearchInput() {
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
+    const recommendationList = document.getElementById("recommendationList");
 
     // Clear previous search results
     searchResults.innerHTML = "";
+    recommendationList.innerHTML = "";
 
     // Get user input
     const query = searchInput.value;
+
+    // If the input is empty, hide the recommendation dropdown
+    if (!query.trim()) {
+        recommendationList.style.display = "none";
+        return;
+    }
 
     // Filter items based on the input
     const filteredItems = filterItems(query);
@@ -65,8 +73,18 @@ function handleSearchInput() {
         resultItem.addEventListener("click", () => handleSearchResultClick(item));
         searchResults.appendChild(resultItem);
     });
-     // Show the container if there are results
-     searchResultsContainer.style.display = filteredItems.length > 0 ? "block" : "none";
+    // Display autocomplete suggestions in the recommendation dropdown
+    filteredItems.forEach(item => {
+        const recommendationItem = document.createElement("li");
+        recommendationItem.textContent = item;
+        recommendationItem.addEventListener("click", () => handleSearchResultClick(item));
+        recommendationList.appendChild(recommendationItem);
+    });
+    // Show or hide the recommendation dropdown based on the presence of recommendations
+    recommendationList.style.display = filteredItems.length > 0 ? "block" : "none";    
+    
+    // Show the container if there are results
+    searchResultsContainer.style.display = filteredItems.length > 0 ? "block" : "none";
 
 }
 
