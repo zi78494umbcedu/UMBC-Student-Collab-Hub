@@ -158,21 +158,36 @@ button-search {
     margin-left: 5px;
     /* Add the following styles for consistent button height */
     white-space: nowrap; /* Prevent text from wrapping to the next line */
+    padding-right: 10px;
 }
 button-search:hover{
-    background-color: #f48f0a; /* Adjust the hover color as needed */
+  /*  background-color: #f48f0a;  Adjust the hover color as needed */
 }
+
+/* Set the search input and button to relative positioning */
+.search-bar input,
+button-search {
+    position:relative;
+}
+
 /* Add this CSS for styling the recommendation dropdown */
 .recommendation-list {
+    z-index: 1;/* Adjust the z-index to ensure the recommendation list is above other elements */
     list-style-type: none;
     margin: 0;
     padding: 0;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #5c5a5a;
+    color: #fff;
+    border-radius: 10px;
+    border-color:#f48f0a;
+    border-width: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     max-height: 150px;
     overflow-y: auto;
     display: none;
+    top:100%;
+    left:0;
 }
 
 .recommendation-list li {
@@ -181,7 +196,7 @@ button-search:hover{
 }
 
 .recommendation-list li:hover {
-    background-color: #ddd;
+    background-color: #f48f0a;
 }
 
 register-button {
