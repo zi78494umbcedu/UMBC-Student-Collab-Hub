@@ -62,16 +62,16 @@
             <div class="left-sidebar">
                 <nav class="left-nav">
                     <ul>
-                        <li><a onclick="navigateToSection('info.html', 'collegeFormalities')">College Formalities</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'eventsAndDates')">Events & Dates</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'emergencyServices')">Emergency Services</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'foodAndRestaurants')">Food & Restaurants</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'alumniCommitteeGSA')">Alumni Committee GSA</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'baltimoreAndAround')">Baltimore & around</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'forumPostsAndComments')">Forum Posts and Comments</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'legalFormalities')">Legal Formalities</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'transitionsAndConveyances')">Transitions & Conveyances</a></li>
-                        <li><a onclick="navigateToSection('info.html', 'financeAndTaxes')">Finance & Taxes</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'collegeFormalities')">College Formalities</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'eventsAndDates')">Events & Dates</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'emergencyServices')">Emergency Services</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'foodAndRestaurants')">Food & Restaurants</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'alumniCommitteeGSA')">Alumni Committee GSA</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'baltimoreAndAround')">Baltimore & around</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'forumPostsAndComments')">Forum Posts and Comments</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'legalFormalities')">Legal Formalities</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'transitionsAndConveyances')">Transitions & Conveyances</a></li>
+                        <li><a onclick="navigateToSectionFromHere('info.html', 'financeAndTaxes')">Finance & Taxes</a></li>
                     </ul>
                 </nav>
             </div>
@@ -139,18 +139,17 @@
 
     <!-- Navigation Script on the Homepage -->
 <script>
-    function navigateToSection(page, sectionId) {
+    function navigateToSectionFromHere(page, sectionId) {
         // Redirect to the specified page with a query parameter
         window.location.href = `${page}?section=${sectionId}`;
     }
-
     // Add event listeners for sidebar links
     const sidebarLinks = document.querySelectorAll('.left-nav a');
     for (let i = 0; i < sidebarLinks.length; i++) {
         sidebarLinks[i].addEventListener('click', function (event) {
             event.preventDefault();
             const targetSectionId = this.getAttribute('href').substring(1); // Remove the # symbol
-            navigateToSection('info.html', targetSectionId);
+            navigateToSectionFromHere('info.html', targetSectionId);
         });
     }
 </script>
