@@ -6,6 +6,7 @@
 <title>User Registration | EKTA</title>
 <link rel="stylesheet" href="styles.css">
 <script src="register.js" defer></script>
+<script src="search.js" defer></script>
 </head>
 <body class="registration-page">
 
@@ -23,7 +24,10 @@
                 <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="We got you, Ask Us!">
+                <input type="text" placeholder="We got you, Ask Us!" id="searchInput" oninput="handleSearchInput()">
+                <button-search onclick="performSearch()">Search</button>
+                <div id="searchResults" class="search-results"></div>
+                <ul id="recommendationList" class="recommendation-list"></ul>
             </div>
             <div class="nav">
                 <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
@@ -73,7 +77,7 @@
 
 
 <!-- Center Content Section -->
-<div class="center-content">
+<div class="center-contentt-register">
 <div class="center-content">
     <div class="form-section">
         <h2>User Registration</h2><br>

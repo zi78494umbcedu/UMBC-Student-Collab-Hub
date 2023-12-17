@@ -145,6 +145,44 @@ button {
     white-space: nowrap; /* Prevent text from wrapping to the next line */
 
 }
+button-search {
+    font-size: 12px; /* Adjust the font size as needed */
+    background-color: #5c5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 70px;
+    margin-right: 10px;
+    margin-left: 5px;
+    /* Add the following styles for consistent button height */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+button-search:hover{
+    background-color: #f48f0a; /* Adjust the hover color as needed */
+}
+/* Add this CSS for styling the recommendation dropdown */
+.recommendation-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+}
+
+.recommendation-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.recommendation-list li:hover {
+    background-color: #ddd;
+}
 
 register-button {
     font-size: 12px;
@@ -269,6 +307,7 @@ button.active{
     padding: 20px;
     text-align:center;
     object-fit:cover;
+    background: url('images/hgrey.jpeg') center/cover;
 
 }
 
@@ -409,6 +448,16 @@ body {
     border: 2px solid #ddd;
 }
 
+.center-contentt-register {
+    display: flex;
+    flex-direction:column; /* Set the direction to column */
+    align-items:center; /* Center-align items horizontally */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    background: url('images/hgrey.jpeg') center/cover;
+
+}
 
 .cardd {
     width: 100%; /* Make each card take the full width of the container */
@@ -462,7 +511,6 @@ li {
     align-items: stretch; 
     flex: 1; 
     background-color: #f5f5f5;
-    padding: 20px;
     background-color: #f5f5f5;
     border: 2px solid #ddd;
 }
@@ -489,7 +537,7 @@ li {
     box-sizing: border-box; /* Include padding and border in the card's total width */
     background-color: #f5f5f5;
     min-height: 800px; /* Adjust as needed */
-
+    background: url('images/hgrey.jpeg') center/cover;
 }
 
 .main-content-housing {
@@ -672,8 +720,8 @@ li {
 .factors-card {
     width: 49%; /* Adjust width as needed */
     border: 1px solid #ddd; /* Add border for aesthetic */
-    background-color: #f5f5f5; /* Adjust as needed */
     padding: 20px;
+    background: url('images/hgrey.jpeg') center/cover;
 }
 .listing-card h4,
 .factors-card h4 {
@@ -944,7 +992,7 @@ li {
     margin-right: 20px;
     margin-bottom:20px;
     display: grid;
-    grid-template-rows: 40% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 40%;
     grid-template-columns: 50% 50%;
     align-items: stretch; 
     flex: 1; 

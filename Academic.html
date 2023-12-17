@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0">
     <title>Academic Aid | EKTA</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="search.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,10 @@
                     <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="We got you, Ask Us!">
+                    <input type="text" placeholder="We got you, Ask Us!" id="searchInput" oninput="handleSearchInput()">
+                    <button-search onclick="performSearch()">Search</button>
+                    <div id="searchResults" class="search-results"></div>
+                    <ul id="recommendationList" class="recommendation-list"></ul>
                 </div>
                 <div class="nav">
                     <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
@@ -160,6 +164,51 @@
             navigateToSection('info.html', targetSectionId);
         });
     }
+</script>
+<script>
+    window.onload = function () {
+        // Function to highlight the active link and scroll to the section
+        function handleLinkClick(sectionId) {
+            // Update the URL with the section parameter
+            window.history.pushState({ section: sectionId }, null, `info.html?section=${sectionId}`);
+
+            // Highlight the sidebar link
+            const sidebarLinks = document.querySelectorAll('.left-nav a');
+            sidebarLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.left-nav a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Scroll to the section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+                 // Highlight the H2 heading
+            const h2Heading = targetSection.querySelector('h2');
+            if (h2Heading) {
+                h2Heading.classList.add('highlighted-heading');
+            }
+            }
+        }
+
+        // Get the sectionId from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionId = urlParams.get('section') || ''; // Use an empty string as the default value
+
+        // Highlight the sidebar link and scroll to the section
+        handleLinkClick(sectionId);
+
+        // Attach click event listener to each sidebar link
+        const sidebarLinks = document.querySelectorAll('.left-nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const clickedSectionId = this.getAttribute('href').substring(1);
+                handleLinkClick(clickedSectionId);
+            });
+        });
+    };
 </script>
 </body>
 </html>

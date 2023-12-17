@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Aid | EKTA</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="search.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,10 @@
                     <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="We got you, Ask Us!">
+                    <input type="text" placeholder="We got you, Ask Us!" id="searchInput" oninput="handleSearchInput()">
+                    <button-search onclick="performSearch()">Search</button>
+                    <div id="searchResults" class="search-results"></div>
+                    <ul id="recommendationList" class="recommendation-list"></ul>
                 </div>
                 <div class="nav">
                     <button class="active"><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Hub | EKTA</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="search.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,10 @@
                     <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="We got you, Ask Us!">
+                    <input type="text" placeholder="We got you, Ask Us!" id="searchInput" oninput="handleSearchInput()">
+                    <button-search onclick="performSearch()">Search</button>
+                    <div id="searchResults" class="search-results"></div>
+                    <ul id="recommendationList" class="recommendation-list"></ul>
                 </div>
                 <div class="nav">
                     <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
@@ -71,6 +75,138 @@
       
  <!-- Center Content Section -->
  <section class="main-content-job-hub">
+        <!-- Resumes and Cover Letters Section -->
+        <section class="content-section" id="resumesAndCoverLetters">
+            <h2>Resumes and Cover Letters</h2>
+            <p>Create impactful resumes and cover letters to stand out in job applications.</p>
+            <ul class="styled-list"><br>
+                <li>Formatting tips: Optimize the layout and format for readability.</li>
+                <li>Highlighting achievements: Showcase accomplishments to grab attention.</li>
+                <li>Customizing for each application: Tailor resumes for specific job requirements.</li>
+                <li>Utilizing keywords: Incorporate industry-specific keywords for applicant tracking systems.</li>
+            </ul>
+        </section>
+        <!-- Interview Preparation Section -->
+        <section class="content-section" id="interviewPreparation">
+            <h2>Interview Preparation</h2>
+            <p>Prepare for job interviews with confidence and success.</p>
+            <ul class="styled-list"><br>
+                <li>Common interview questions: Familiarize yourself with frequently asked questions.</li>
+                <li>Mock interview practice: Conduct practice interviews to refine your responses.</li>
+                <li>Researching the company: Gather information about the company's values and culture.</li>
+                <li>Body language tips: Pay attention to non-verbal cues during interviews.</li>
+            </ul>
+        </section>
+        <!-- Professional Networking Section -->
+        <section class="content-section" id="professionalNetworking">
+            <h2>Professional Networking</h2>
+            <p>Build a strong professional network to enhance career opportunities.</p>
+            <ul class="styled-list"><br>
+                <li>LinkedIn profile optimization: Create a compelling LinkedIn profile to attract connections.</li>
+                <li>Networking events: Attend industry-specific events to expand your network.</li>
+                <li>Informational interviews: Connect with professionals for insights into their career paths.</li>
+                <li>Maintaining relationships: Nurture and sustain connections through regular interactions.</li>
+            </ul>
+        </section>
+        <!-- Job Market Research Section -->
+        <section class="content-section" id="jobMarketResearch">
+            <h2>Job Market Research</h2>
+            <p>Conduct thorough research on the job market and industry trends.</p>
+            <ul class="styled-list"><br>
+                <li>Identifying high-demand industries: Explore sectors with growing job opportunities.</li>
+                <li>Research tools and resources: Utilize online platforms for job market analysis.</li>
+                <li>Understanding salary expectations: Research salary ranges for your desired roles.</li>
+                <li>Industry reports: Stay informed about market trends through industry reports.</li>
+            </ul>
+        </section>
+        <!-- Professional Development Section -->
+        <section class="content-section" id="professionalDevelopment">
+            <h2>Professional Development</h2>
+            <p>Continuously enhance your skills and stay updated on industry advancements.</p>
+            <ul class="styled-list"><br>
+                <li>Online courses and certifications: Enroll in relevant courses to acquire new skills.</li>
+                <li>Professional workshops: Attend workshops to gain hands-on experience.</li>
+                <li>Continuous learning mindset: Cultivate a mindset of lifelong learning for career growth.</li>
+                <li>Networking with professionals: Connect with industry experts for mentorship.</li>
+            </ul>
+        </section>
+        <!-- Job Search Tools Section -->
+        <section class="content-section" id="jobSearchTools">
+            <h2>Job Search Tools</h2>
+            <p>Utilize various tools to streamline and optimize your job search process.</p>
+            <ul class="styled-list"><br>
+                <li>Job search platforms: Explore popular job boards and platforms for job listings.</li>
+                <li>Resume optimization tools: Use tools to enhance your resume's effectiveness.</li>
+                <li>Application tracking systems: Understand how applicant tracking systems work.</li>
+                <li>Networking platforms: Leverage professional networking platforms for job opportunities.</li>
+            </ul>
+        </section>
+        <!-- Cultural Considerations Section -->
+        <section class="content-section" id="culturalConsiderations">
+            <h2>Cultural Considerations</h2>
+            <p>Navigate cultural nuances in the job search and workplace environment.</p>
+            <ul class="styled-list"><br>
+                <li>Understanding workplace culture: Adapt to the cultural norms of your workplace.</li>
+                <li>Effective communication in diverse settings: Communicate effectively in multicultural teams.</li>
+                <li>Addressing cultural differences in interviews: Be aware of cultural variations in interview etiquette.</li>
+                <li>Building cross-cultural relationships: Foster connections with colleagues from diverse backgrounds.</li>
+            </ul>
+        </section>
+        <!-- Work-Life Balance Section -->
+        <section class="content-section" id="workLifeBalance">
+            <h2>Work-Life Balance</h2>
+            <p>Maintain a healthy work-life balance for overall well-being.</p>
+            <ul class="styled-list"><br>
+                <li>Setting boundaries: Establish clear boundaries between work and personal life.</li>
+                <li>Managing stress: Employ stress-management techniques for a balanced life.</li>
+                <li>Prioritizing self-care: Prioritize self-care activities to maintain well-being.</li>
+                <li>Flexible work arrangements: Explore flexible work options for a better work-life balance.</li>
+            </ul>
+        </section>
+        <!-- Job Retention Tips Section -->
+        <section class="content-section" id="jobRetentionTips">
+            <h2>Job Retention Tips</h2>
+            <p>Once employed, discover strategies for job satisfaction and retention.</p>
+            <ul class="styled-list"><br>
+                <li>Building positive relationships at work: Foster positive connections with colleagues and superiors.</li>
+                <li>Seeking mentorship: Find mentors for guidance and career advice.</li>
+                <li>Continuous career growth: Plan for continuous career development and advancement.</li>
+                <li>Contributing to team success: Contribute actively to team projects for professional growth.</li>
+            </ul>
+        </section>
+        <!-- Community Engagement Section -->
+        <section class="content-section" id="communityEngagement">
+            <h2>Community Engagement</h2>
+            <p>Engage with the local community for both personal and professional growth.</p>
+            <ul class="styled-list"><br>
+                <li>Volunteer opportunities: Contribute to community service for a sense of fulfillment.</li>
+                <li>Community events: Attend local events to expand your social and professional circles.</li>
+                <li>Networking within the community: Connect with local professionals for mutual support.</li>
+                <li>Building a positive community presence: Contribute positively to the local community for a strong reputation.</li>
+            </ul>
+        </section>
+        <!-- Feedback and Adaptation Section -->
+        <section class="content-section" id="feedbackAndAdaptation">
+            <h2>Feedback and Adaptation</h2>
+            <p>Embrace feedback and adapt to evolving job market dynamics.</p>
+            <ul class="styled-list"><br>
+                <li>Receiving constructive feedback: Be open to feedback for continuous improvement.</li>
+                <li>Adapting to industry changes: Stay agile and adapt to evolving industry trends.</li>
+                <li>Lifelong learning mindset: Cultivate a mindset of continuous learning for career resilience.</li>
+                <li>Professional development feedback loops: Create feedback loops for ongoing career growth.</li>
+            </ul>
+        </section>
+        <!-- ??-->
+        <section class="content-section" id="internshipGuidance">
+            <h2>Internship Guidance</h2>
+            <p>Navigate the internship process successfully with these key steps:</p>
+            <ul class="styled-list">
+                <li>Find Internships: Use online platforms, university resources, and networking.</li>
+                <li>Application Process: Craft targeted resumes, cover letters, and prepare for interviews.</li>
+                <li>Maximize Internships: Set objectives, seek feedback, and build a professional network.</li>
+                <li>Post-Internship: Update resume, request recommendations, and stay connected for future opportunities.</li>
+            </ul>
+        </section>
         <!-- Job Search Strategies Section -->
         <section class="content-section" id="jobSearchStrategies">
             <h2>Job Search Strategies</h2>
@@ -194,127 +330,6 @@
 
             </ul>
         </section>
-        <!-- Resumes and Cover Letters Section -->
-        <section class="content-section" id="resumesAndCoverLetters">
-            <h2>Resumes and Cover Letters</h2>
-            <p>Create impactful resumes and cover letters to stand out in job applications.</p>
-            <ul class="styled-list"><br>
-                <li>Formatting tips: Optimize the layout and format for readability.</li>
-                <li>Highlighting achievements: Showcase accomplishments to grab attention.</li>
-                <li>Customizing for each application: Tailor resumes for specific job requirements.</li>
-                <li>Utilizing keywords: Incorporate industry-specific keywords for applicant tracking systems.</li>
-            </ul>
-        </section>
-        <!-- Interview Preparation Section -->
-        <section class="content-section" id="interviewPreparation">
-            <h2>Interview Preparation</h2>
-            <p>Prepare for job interviews with confidence and success.</p>
-            <ul class="styled-list"><br>
-                <li>Common interview questions: Familiarize yourself with frequently asked questions.</li>
-                <li>Mock interview practice: Conduct practice interviews to refine your responses.</li>
-                <li>Researching the company: Gather information about the company's values and culture.</li>
-                <li>Body language tips: Pay attention to non-verbal cues during interviews.</li>
-            </ul>
-        </section>
-        <!-- Professional Networking Section -->
-        <section class="content-section" id="professionalNetworking">
-            <h2>Professional Networking</h2>
-            <p>Build a strong professional network to enhance career opportunities.</p>
-            <ul class="styled-list"><br>
-                <li>LinkedIn profile optimization: Create a compelling LinkedIn profile to attract connections.</li>
-                <li>Networking events: Attend industry-specific events to expand your network.</li>
-                <li>Informational interviews: Connect with professionals for insights into their career paths.</li>
-                <li>Maintaining relationships: Nurture and sustain connections through regular interactions.</li>
-            </ul>
-        </section>
-        <!-- Job Market Research Section -->
-        <section class="content-section" id="jobMarketResearch">
-            <h2>Job Market Research</h2>
-            <p>Conduct thorough research on the job market and industry trends.</p>
-            <ul class="styled-list"><br>
-                <li>Identifying high-demand industries: Explore sectors with growing job opportunities.</li>
-                <li>Research tools and resources: Utilize online platforms for job market analysis.</li>
-                <li>Understanding salary expectations: Research salary ranges for your desired roles.</li>
-                <li>Industry reports: Stay informed about market trends through industry reports.</li>
-            </ul>
-        </section>
-        <!-- Professional Development Section -->
-        <section class="content-section" id="professionalDevelopment">
-            <h2>Professional Development</h2>
-            <p>Continuously enhance your skills and stay updated on industry advancements.</p>
-            <ul class="styled-list"><br>
-                <li>Online courses and certifications: Enroll in relevant courses to acquire new skills.</li>
-                <li>Professional workshops: Attend workshops to gain hands-on experience.</li>
-                <li>Continuous learning mindset: Cultivate a mindset of lifelong learning for career growth.</li>
-                <li>Networking with professionals: Connect with industry experts for mentorship.</li>
-            </ul>
-        </section>
-        <!-- Job Search Tools Section -->
-        <section class="content-section" id="jobSearchTools">
-            <h2>Job Search Tools</h2>
-            <p>Utilize various tools to streamline and optimize your job search process.</p>
-            <ul class="styled-list"><br>
-                <li>Job search platforms: Explore popular job boards and platforms for job listings.</li>
-                <li>Resume optimization tools: Use tools to enhance your resume's effectiveness.</li>
-                <li>Application tracking systems: Understand how applicant tracking systems work.</li>
-                <li>Networking platforms: Leverage professional networking platforms for job opportunities.</li>
-            </ul>
-        </section>
-        <!-- Cultural Considerations Section -->
-        <section class="content-section" id="culturalConsiderations">
-            <h2>Cultural Considerations</h2>
-            <p>Navigate cultural nuances in the job search and workplace environment.</p>
-            <ul class="styled-list"><br>
-                <li>Understanding workplace culture: Adapt to the cultural norms of your workplace.</li>
-                <li>Effective communication in diverse settings: Communicate effectively in multicultural teams.</li>
-                <li>Addressing cultural differences in interviews: Be aware of cultural variations in interview etiquette.</li>
-                <li>Building cross-cultural relationships: Foster connections with colleagues from diverse backgrounds.</li>
-            </ul>
-        </section>
-        <!-- Work-Life Balance Section -->
-        <section class="content-section" id="workLifeBalance">
-            <h2>Work-Life Balance</h2>
-            <p>Maintain a healthy work-life balance for overall well-being.</p>
-            <ul class="styled-list"><br>
-                <li>Setting boundaries: Establish clear boundaries between work and personal life.</li>
-                <li>Managing stress: Employ stress-management techniques for a balanced life.</li>
-                <li>Prioritizing self-care: Prioritize self-care activities to maintain well-being.</li>
-                <li>Flexible work arrangements: Explore flexible work options for a better work-life balance.</li>
-            </ul>
-        </section>
-        <!-- Job Retention Tips Section -->
-        <section class="content-section" id="jobRetentionTips">
-            <h2>Job Retention Tips</h2>
-            <p>Once employed, discover strategies for job satisfaction and retention.</p>
-            <ul class="styled-list"><br>
-                <li>Building positive relationships at work: Foster positive connections with colleagues and superiors.</li>
-                <li>Seeking mentorship: Find mentors for guidance and career advice.</li>
-                <li>Continuous career growth: Plan for continuous career development and advancement.</li>
-                <li>Contributing to team success: Contribute actively to team projects for professional growth.</li>
-            </ul>
-        </section>
-        <!-- Community Engagement Section -->
-        <section class="content-section" id="communityEngagement">
-            <h2>Community Engagement</h2>
-            <p>Engage with the local community for both personal and professional growth.</p>
-            <ul class="styled-list"><br>
-                <li>Volunteer opportunities: Contribute to community service for a sense of fulfillment.</li>
-                <li>Community events: Attend local events to expand your social and professional circles.</li>
-                <li>Networking within the community: Connect with local professionals for mutual support.</li>
-                <li>Building a positive community presence: Contribute positively to the local community for a strong reputation.</li>
-            </ul>
-        </section>
-        <!-- Feedback and Adaptation Section -->
-        <section class="content-section" id="feedbackAndAdaptation">
-            <h2>Feedback and Adaptation</h2>
-            <p>Embrace feedback and adapt to evolving job market dynamics.</p>
-            <ul class="styled-list"><br>
-                <li>Receiving constructive feedback: Be open to feedback for continuous improvement.</li>
-                <li>Adapting to industry changes: Stay agile and adapt to evolving industry trends.</li>
-                <li>Lifelong learning mindset: Cultivate a mindset of continuous learning for career resilience.</li>
-                <li>Professional development feedback loops: Create feedback loops for ongoing career growth.</li>
-            </ul>
-        </section>
 </section>
 
 
@@ -368,6 +383,51 @@
             navigateToSection('info.html', targetSectionId);
         });
     }
+</script>
+<script>
+    window.onload = function () {
+        // Function to highlight the active link and scroll to the section
+        function handleLinkClick(sectionId) {
+            // Update the URL with the section parameter
+            window.history.pushState({ section: sectionId }, null, `info.html?section=${sectionId}`);
+
+            // Highlight the sidebar link
+            const sidebarLinks = document.querySelectorAll('.left-nav a');
+            sidebarLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.left-nav a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Scroll to the section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+                 // Highlight the H2 heading
+            const h2Heading = targetSection.querySelector('h2');
+            if (h2Heading) {
+                h2Heading.classList.add('highlighted-heading');
+            }
+            }
+        }
+
+        // Get the sectionId from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionId = urlParams.get('section') || ''; // Use an empty string as the default value
+
+        // Highlight the sidebar link and scroll to the section
+        handleLinkClick(sectionId);
+
+        // Attach click event listener to each sidebar link
+        const sidebarLinks = document.querySelectorAll('.left-nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const clickedSectionId = this.getAttribute('href').substring(1);
+                handleLinkClick(clickedSectionId);
+            });
+        });
+    };
 </script>
 </body>
 </html>
