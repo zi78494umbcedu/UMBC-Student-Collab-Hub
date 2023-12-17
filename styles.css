@@ -159,6 +159,9 @@ button-search {
     /* Add the following styles for consistent button height */
     white-space: nowrap; /* Prevent text from wrapping to the next line */
     padding-right: 10px;
+     /* Add border styles */
+     border: 2px solid #f48f0a;;
+     border-radius: 20px;
 }
 button-search:hover{
   /*  background-color: #f48f0a;  Adjust the hover color as needed */
@@ -188,11 +191,20 @@ button-search {
     display: none;
     top:100%;
     left:0;
+    /* Add border styles */
+    border: 2px solid #f48f0a;;
+    border-radius: 20px;
 }
 
 .recommendation-list li {
     padding: 8px;
     cursor: pointer;
+    border-bottom: 2px solid #ddd;
+
+}
+/* Style the last list item to remove the bottom border */
+.recommendation-list li:last-child {
+    border-bottom: none;
 }
 
 .recommendation-list li:hover {
