@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const submitTestimonialFunction = require('./netlify/functions/submitTestimonial');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Define a route to handle form submissions
-app.post('/submitTestimonial', (req, res) => {
+app.post('/netlify/functions/submitTestimonial', (req, res) => {
     const { name, email, role, category, story } = req.body;
     const sql = 'INSERT INTO testimonials (name, email, role, category, story) VALUES (?, ?, ?, ?, ?)';
     const values = [name, email, role, category, story];
@@ -50,7 +52,7 @@ app.post('/submitTestimonial', (req, res) => {
 });
 
 // Endpoint to retrieve testimonials from the database
-app.get('/testimonials', (req, res) => {
+app.get('/netlify/functions/testimonials', (req, res) => {
     // Use the connection pool to query the database
     pool.query('SELECT * FROM testimonials', (error, results) => {
         if (error) {
