@@ -15,7 +15,7 @@ const submitTestimonial = async (event) => {
     const category = categoryInput.value;
     const story = storyInput.value;
     try {
-        const response = await fetch('http://localhost:3000/submitTestimonial', {
+        const response = await fetch('https://ektaumbc.netlify.app/submitTestimonial', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const submitTestimonial = async (event) => {
 // Function to fetch testimonials from the server
 const fetchTestimonials = async () => {
     try {
-        const response = await fetch('http://localhost:3000/testimonials');
+        const response = await fetch('https://ektaumbc.netlify.app/testimonials');
         const testimonials = await response.json();
 
         // Get the testimonial section container
