@@ -4,9 +4,13 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors'); // Add this line
 const path = require('path');
-const mysql = require('mysql');
+const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 const corsOptions = {
     origin: 'http://localhost:8080',
     credentials: true,
@@ -27,22 +31,56 @@ app.use(session({
     saveUninitialized:true,
     cookie:{secure:true}
 }));
-const connection = mysql.createConnection({
+const db = mysql.createConnection({
+    connectionLimit: 10, // Adjust as needed
     host: 'localhost',
     user: 'root',
     password: 'root1234',
     database: 'student_testimonials'
 });
 
-connection.connect();
+//Connect to MySQL
+db.connect((err)=>{
+    if(err){
+        console.log('Error connecting to MySQL: ', err);
+        return;
+    }
+    console.log('Connected to MySQL');
+});
 
-app.get('/testimonials', (req, res) => {
-    connection.query('SELECT * FROM testimonials', (error, results, fields) => {
-        if (error) throw error;
-        res.json(results);
+//Middleware to parse JSON and form data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+//Define a route to handle form submissions
+app.post('/submitTestimonial', (req, res) => {
+    const { name, email, role, category, story } = req.body;
+    const sql = 'INSERT INTO testimonials (name, email, role, category, story) VALUES (?, ?, ?, ?, ?)';
+    const values = [name, email, role, category, story];
+
+    // Insert the testimonial into the database
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Error inserting into MySQL:', err);
+            res.status(500).json({ success: false, message: 'Internal Server Error' });
+            return;
+        }
+        console.log('Testimonial inserted into MySQL:', result);
+        res.json({ success: true, message: 'Testimonial submitted successfully' });
     });
 });
 
+// Endpoint to retrieve testimonials from the database
+app.get('/testimonials', (req, res) => {
+    db.query('SELECT * FROM testimonials', (error, results) => {
+        if (error) {
+            console.error('Error fetching testimonials:', error);
+            res.status(500).json({ success: false, message: 'Internal Server Error' });
+            return;
+        }
+        res.json(results);
+    });
+});
 app.post('/register', express.json(), (req, res) => {
     const { username, email, password } = req.body;
 
@@ -93,7 +131,6 @@ app.get('/checkSession', (req, res)=>{
     res.json({ loggedIn });
 });
 
-const PORT = process.env.PORT || 3000;
 
 //Start the server
 app.listen(PORT, ()=>{

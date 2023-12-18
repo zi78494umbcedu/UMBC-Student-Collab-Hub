@@ -85,65 +85,7 @@
 <div class="left-sidebar-exp">
     <!-- Testimonial Display Section (Left 60% width) -->
     <h2>Testimonials For You.!</h2>
-    <div class="testimonial-section">
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: John Doe</h3>
-            <p>Role: Student</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "It was a great experience at UMBC. The faculty were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were really engaging and humble and ready to help at convenience and assurance.')">Read More</button>
-
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Joseph D'souza</h3>
-            <p>Role: Academic Counsellor</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "Do consider checking this a prospect, UMBC. The prerogative were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Marie Doe</h3>
-            <p>Role: Chancellor</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "My name is Marie Doe. I am a PHD Chancellor at UMBC. The infrastructure at...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Martha Dominiguez</h3>
-            <p>Role: Student</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Krish Kelper</h3>
-            <p>Role: Student</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Johnson Monroe</h3>
-            <p>Role: Student</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-            <!-- Add more testimonials as needed -->
-        </div>
-        <div class="testimonial" id="testimonial1">
-            <h3>Name: Partix Wilson</h3>
-            <p>Role: Student</p>
-            <p>Category: Academic</p>
-            <p>Excerpt: "I had a great experience at UMBC. The professors were...</p><br>
-            <button onclick="readMore('testimonial1', 'John Doe', 'Student', 'Academic', 'It was a great experience at UMBC. The faculty were...')">Read More</button>
-            <!-- Add more testimonials as needed -->
-        </div>
+    <div class="testimonial-section" id="testimonialSection">
     </div>
 </div>
 <div class="right-sidebar-exp">
@@ -152,14 +94,13 @@
         <h2>Share Your Experience With Us.</h2>
         <p>We'd love to hear about your experiences at UMBC. Share your stories with us!</p>
         <br>
-
-        <form action="/submitTestimonial" method="POST" onsubmit="return validateForm()">
+        <form id="testimonialForm" onsubmit="submitTestimonial(event)">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required><br>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required><br>
-            <label for="category">Role</label>
-            <select id="category" name="category">
+            <label for="role">Role</label>
+            <select id="role" name="role">
                 <option value="Student">Student</option>
                 <option value="Alumni">Alumni</option>
                 <option value="Professor">Professor</option>
@@ -174,16 +115,16 @@
             </select><br>
                 <label for="category">Category</label>
                 <select id="category" name="category">
-                    <option value="academic">Academic Experience</option>
-                    <option value="housing">Housing and Accommodation</option>
-                    <option value="campus-life">Campus Life</option>
-                    <option value="extracurricular">Extracurricular Activities</option>
-                    <option value="internships-jobs">Internships and Jobs</option>
-                    <option value="events-activities">Events and Activities</option>
-                    <option value="campus-resources">Campus Resources</option>
-                    <option value="transition-adjustment">Transition and Adjustment</option>
-                    <option value="social-life">Social Life</option>
-                    <option value="research-projects">Research and Projects</option>
+                    <option value="Academic Experience">Academic Experience</option>
+                    <option value="Housing and Accommodation">Housing and Accommodation</option>
+                    <option value="Campus Life">Campus Life</option>
+                    <option value="Extracurricular Activities">Extracurricular Activities</option>
+                    <option value="Internships and Jobs">Internships and Jobs</option>
+                    <option value="Events and Activities">Events and Activities</option>
+                    <option value="Campus Resources">Campus Resources</option>
+                    <option value="Transition and Adjustment">Transition and Adjustment</option>
+                    <option value="Social Life">Social Life</option>
+                    <option value="Research and Projects">Research and Projects</option>
                 <!-- Add more categories as needed -->
             </select><br>
             <label for="story">Your Story</label><br>
