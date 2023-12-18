@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-    origin: 'http://localhost:8080',
+    origin: 'https://ektaumbc.netlify.app:8080',
     credentials: true,
     // Add any other CORS options you need
 };
@@ -145,5 +145,5 @@ app.get('/checkSession', (req, res)=>{
 
 //Start the server
 app.listen(PORT, ()=>{
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://ektaumbc.netlify.app:${PORT}`);
 });
