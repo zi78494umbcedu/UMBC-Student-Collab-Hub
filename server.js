@@ -6,6 +6,8 @@ const cors = require('cors'); // Add this line
 const path = require('path');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const { Pool } = require('pg'); // Import Pool from 'pg'
+
 
 
 const app = express();
@@ -31,16 +33,25 @@ app.use(session({
     saveUninitialized:true,
     cookie:{secure:true}
 }));
-const db = mysql.createConnection({
-    connectionLimit: 10, // Adjust as needed
-    host: 'localhost',
-    user: 'root',
-    password: 'root1234',
-    database: 'student_testimonials'
+
+// Use Pool instead of createConnection
+const pool = new Pool({
+    user: 'ashwin',
+    host: 'scaled-canine-6605.g8z.cockroachlabs.cloud',
+    database: 'defaultdb',
+    password: 'y4VGudCsMKTPsjBlK52nFA', // Replace with your actual password
+    port: 26257
 });
 
+/*const db = mysql.createConnection({
+    host: 'scaled-canine-6605.g8z.cockroachlabs.cloud',//'localhost'
+    user: 'ashwin',//'root'
+    password: 'y4VGudCsMKTPsjBlK52nFA',//'root1234'
+    database: 'defaultdb' //'student_testimonials'
+});*/
+
 //Connect to MySQL
-db.connect((err)=>{
+pool.connect((err)=>{
     if(err){
         console.log('Error connecting to MySQL: ', err);
         return;
@@ -59,7 +70,7 @@ app.post('/submitTestimonial', (req, res) => {
     const values = [name, email, role, category, story];
 
     // Insert the testimonial into the database
-    db.query(sql, values, (err, result) => {
+    pool.query(sql, values, (err, result) => {
         if (err) {
             console.error('Error inserting into MySQL:', err);
             res.status(500).json({ success: false, message: 'Internal Server Error' });
@@ -72,7 +83,7 @@ app.post('/submitTestimonial', (req, res) => {
 
 // Endpoint to retrieve testimonials from the database
 app.get('/testimonials', (req, res) => {
-    db.query('SELECT * FROM testimonials', (error, results) => {
+    pool.query('SELECT * FROM testimonials', (error, results) => {
         if (error) {
             console.error('Error fetching testimonials:', error);
             res.status(500).json({ success: false, message: 'Internal Server Error' });
