@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EKTA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <script src="search.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Header content, same as the homepage -->
+        <nav>
+            <div class="navbar">
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="logo">
+                    <a href="index.html"><img src="images/UMBC logo.png" alt="Your Logo" class="logo-image"></a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="We got you, Ask Us!" id="searchInput" oninput="handleSearchInput()">
+                    <button-search onclick="performSearch()">Search</button>
+                    <div id="searchResults" class="search-results"></div>
+                    <ul id="recommendationList" class="recommendation-list"></ul>
+                </div>
+                <div class="nav">
+                    <button><a href="Housing.html" style="text-decoration: none; color:white">Housing Hub</a></button>
+                    <button><a href="Academic.html" style="text-decoration: none; color:white">Academic Aid</a></button>
+                    <button><a href="Job.html" style="text-decoration: none; color:white">Job Hub</a></button>
+                    <button><a href="Experience.html" style="text-decoration: none; color:white">Share Your Experience</a></button>
+                </div>
+                <div class="register-button">
+                    <register-button id="registerButton"><a href="register.html" style="text-decoration: none; color:white">Register</a></register-button>
+                </div>
+                <div class="user-icon" id="userIcon" style="display:none;">
+                    <!-- You can replace the content below with your user icon HTML or image tag -->
+                   <!-- <img src="images/user.png" alt="User Icon" width= "35px"  height="35px" >-->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="secondary-nav">
+        <div class="ticker-container">
+            <div class="ticker">
+                <!-- Up arrow special character: &#9650; -->
+                <!-- Down arrow special character: &#9660; -->
+                <!-- Example content -->
+                &#9650; Ekta Events &nbsp;&nbsp;&nbsp; &#9650; UMBC Events &nbsp;&nbsp;&nbsp; &#9660; Sports Events &nbsp;&nbsp;&nbsp; &#9660; Internship Fairs
+            </div>
+        </div>
+    </nav>
+    <section class="main-content">
+        <div class="left-sidebar">
+            <div class="left-sidebar">
+            <div class="left-nav">
+                <ul class="styled-list" id="sidebarLinks"><br>
+                    <li><a href="#collegeFormalities">College Formalities</a></li>
+                    <li><a href="#eventsAndDates">Events & Dates</a></li>
+                    <li><a href="#emergencyServices">Emergency Services</a></li>
+                    <li><a href="#foodAndRestaurants">Food & Restaurants</a></li>
+                    <li><a href="#alumniCommitteeGSA">Alumni Committee GSA</a></li>
+                    <li><a href="#baltimoreAndAround">Baltimore & around</a></li>
+                    <li><a href="#forumPostsAndComments">Forum Posts and Comments</a></li>
+                    <li><a href="#legalFormalities">Legal Formalities</a></li>
+                    <li><a href="#transitionsAndConveyances">Transitions & Conveyances</a></li>
+                    <li><a href="#financeAndTaxes">Finance & Taxes</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+      
+ <!-- Center Content Section -->
+ <section class="main-content-info">
+        <!-- College Formalities -->
+        <section class="content-section" id="collegeFormalities">
+            <h2>College Formalities</h2>
+            <p>Ensure a smooth transition into college life by understanding and completing essential formalities.</p>
+            <ul class="styled-list"><br>
+                <li>Admission Process: Familiarize yourself with the steps and requirements for admission to your program.</li>
+                <li>Orientation Sessions: Attend orientation sessions to get acquainted with campus facilities and resources.</li>
+                <li>Registration Procedures: Understand how to register for courses and plan your academic schedule.</li>
+                <li>Student ID and Cards: Obtain your student identification card for access to campus services and events.</li>
+                <li>Financial Aid and Scholarships: Explore available financial aid options and scholarship opportunities.</li>
+                <li>Health Insurance: Ensure you have the necessary health insurance coverage as required by the college.</li>
+                <li>Library and Learning Resources: Access the library and various learning resources offered by the college.</li>
+                <li>Code of Conduct: Review and adhere to the college's code of conduct and ethical guidelines.</li>
+                <li>Campus Safety: Familiarize yourself with emergency procedures and campus safety measures.</li>
+                <li>Connect with Advisors: Establish communication with academic advisors for guidance throughout your college journey.</li>
+            </ul>
+        </section>
+
+        <!-- Events & Dates -->
+        <section class="content-section" id="eventsAndDates">
+            <h2>Events & Dates</h2>
+            <p>Explore upcoming events and important dates.</p>
+            <ul class="styled-list"><br>
+                <li>Event calendars: Stay updated on various events happening around campus.</li>
+                <li>Important dates: Mark your calendar with key academic and social dates.</li>
+                <li>Participate in events: Engage in campus activities and make the most of your time.</li>
+                <li>Networking opportunities: Build connections through participation in events.</li>
+            </ul>
+        </section>
+
+        <!-- Emergency Services -->
+        <section class="content-section" id="emergencyServices">
+            <h2>Emergency Services</h2>
+            <p>Access emergency services and resources.</p>
+            <ul class="styled-list"><br>
+                <li>Emergency contacts: Save important emergency contact numbers.</li>
+                <li>Emergency procedures: Familiarize yourself with emergency protocols on campus.</li>
+                <li>Resources available: Know where to find emergency resources when needed.</li>
+                <li>Community support: Connect with the community for additional support.</li>
+            </ul>
+        </section>
+
+        <!-- Food & Restaurants -->
+        <section class="content-section" id="foodAndRestaurants">
+            <h2>Food & Restaurants</h2>
+            <p>Discover dining options and local restaurants.</p>
+            <ul class="styled-list"><br>
+                <li>Campus dining: Explore the variety of dining options available on campus.</li>
+                <li>Local restaurants: Discover popular restaurants in the surrounding area.</li>
+                <li>Special dietary needs: Find options that cater to your specific dietary requirements.</li>
+                <li>Food delivery services: Explore convenient food delivery services.</li>
+            </ul>
+        </section>
+
+        <!-- Alumni Committee GSA -->
+        <section class="content-section" id="alumniCommitteeGSA">
+            <h2>Alumni Committee GSA</h2>
+            <p>Connect with the Alumni Committee and Graduate Student Association.</p>
+            <ul class="styled-list"><br>
+                <li>Alumni network: Join the alumni network for mentorship and networking.</li>
+                <li>Graduate Student Association: Get involved with the GSA and contribute to campus life.</li>
+                <li>Events and collaborations: Participate in events organized by the Alumni Committee and GSA.</li>
+                <li>Professional development: Access resources for your professional development.</li>
+            </ul>
+        </section>
+
+        <!-- Baltimore & around -->
+        <section class="content-section" id="baltimoreAndAround">
+            <h2>Baltimore & around</h2>
+            <p>Explore the city of Baltimore and nearby attractions.</p>
+            <ul class="styled-list"><br>
+                <li>Local attractions: Visit popular landmarks and attractions in Baltimore.</li>
+                <li>Cultural events: Explore cultural events and festivals happening in the city.</li>
+                <li>Recreational spots: Find relaxing places and recreational spots in and around Baltimore.</li>
+                <li>Community engagement: Get involved in community activities and projects.</li>
+            </ul>
+        </section>
+
+        <!-- Forum Posts and Comments -->
+        <section class="content-section" id="forumPostsAndComments">
+            <h2>Forum Posts and Comments</h2>
+            <p>Engage in discussions and share your thoughts with the community.</p>
+            <ul class="styled-list"><br>
+                <li>Discussion forums: Participate in forums related to various topics.</li>
+                <li>Community feedback: Share your experiences and provide feedback on relevant topics.</li>
+                <li>Collaborate with peers: Connect with fellow students through forum discussions.</li>
+                <li>Ask questions: Seek advice and answers to your queries through community forums.</li>
+            </ul>
+        </section>
+
+        <!-- Legal Formalities -->
+        <section class="content-section" id="legalFormalities">
+            <h2>Legal Formalities</h2>
+            <p>Understand legal requirements and formalities for students.</p>
+            <ul class="styled-list"><br>
+                <li>Student rights and responsibilities: Familiarize yourself with your rights and responsibilities as a student.</li>
+                <li>Legal support services: Access legal support services available for students.</li>
+                <li>Visa and immigration: Stay informed about visa and immigration requirements.</li>
+                <li>Legal resources: Find resources for legal assistance and advice.</li>
+            </ul>
+        </section>
+
+        <!-- Transitions & Conveyances -->
+        <section class="content-section" id="transitionsAndConveyances">
+            <h2>Transitions & Conveyances</h2>
+            <p>Navigate transitions and transportation options.</p>
+            <ul class="styled-list"><br>
+                <li>Transportation services: Explore available transportation services in and around campus.</li>
+                <li>Moving tips: Get tips on transitioning smoothly, especially for international students.</li>
+                <li>Campus navigation: Familiarize yourself with campus layout and navigation.</li>
+                <li>Community support: Connect with the community for additional support.</li>
+            </ul>
+        </section>
+
+        <!-- Finance & Taxes -->
+        <section class="content-section" id="financeAndTaxes">
+            <h2>Finance & Taxes</h2>
+            <p>Manage your finances and understand tax-related matters.</p>
+            <ul class="styled-list"><br>
+                <li>Financial planning: Plan and manage your finances effectively during your academic journey.</li>
+                <li>Tax filing assistance: Get information and assistance for filing taxes as a student.</li>
+                <li>Scholarships and grants: Explore available financial aid options, scholarships, and grants.</li>
+                <li>Budgeting tips: Learn effective budgeting tips for students.</li>
+            </ul>
+        </section>
+                
+</section>
+
+
+
+<div class="right-sidebar">
+    <div class="link-box">
+        <h3>Home For You Here</h3><br>
+        <div class="wide-image">
+            <img src="images/commons.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+        </div>
+        <br>
+        <div class="wide-image">
+            <img src="images/food.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+        </div>
+        <br>  
+        <div class="wide-image">
+            <img src="images/diwali.png" alt="EKTA Election Day Tomorrow" width="275" height="350"> 
+        </div>
+    </div>
+
+    <div class="social-box">
+        <h3>Follow Us</h3><br>
+        <ul class="social-links">
+            <!-- Add social media links as needed -->
+            <li><a href="https://www.facebook.com/groups/UMBC.EKTA/"><img src="images/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/ekta-at-umbc-98210b103"><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/ekta_umbc/"><img src="images/instagram.png" alt="Instagram"> Instagram</a></li>
+        </ul>
+    </div>
+</div>
+</section>
+<footer>
+<div class="contact">
+    <h4>Contact Us</h4>
+    <p>Email: ekta@gmail.com</p>
+    <p>Phone: (123) 456-7890</p>
+</div>
+</footer>
+<!-- Info.html Script -->
+<script>
+    window.onload = function () {
+        // Function to highlight the active link and scroll to the section
+        function handleLinkClick(sectionId) {
+            // Update the URL with the section parameter
+            window.history.pushState({ section: sectionId }, null, `info.html?section=${sectionId}`);
+
+            // Highlight the sidebar link
+            const sidebarLinks = document.querySelectorAll('.left-nav a');
+            sidebarLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.left-nav a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Scroll to the section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+                 // Highlight the H2 heading
+            const h2Heading = targetSection.querySelector('h2');
+            if (h2Heading) {
+                h2Heading.classList.add('highlighted-heading');
+            }
+            }
+        }
+
+        // Get the sectionId from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionId = urlParams.get('section') || ''; // Use an empty string as the default value
+
+        // Highlight the sidebar link and scroll to the section
+        handleLinkClick(sectionId);
+
+        // Attach click event listener to each sidebar link
+        const sidebarLinks = document.querySelectorAll('.left-nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const clickedSectionId = this.getAttribute('href').substring(1);
+                handleLinkClick(clickedSectionId);
+            });
+        });
+    };
+</script>
+
+</body>
+</html>
